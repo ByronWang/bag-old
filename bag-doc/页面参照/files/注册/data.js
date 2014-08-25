@@ -1,0 +1,859 @@
+﻿$axure.loadCurrentPage({
+  "url":"注册.html",
+  "generationDate":new Date(1408680671814.91),
+  "isCanvasEnabled":false,
+  "variables":["OnLoadVariable"],
+  "page":{
+    "packageId":"b1626ec5816f48df85063ee367bd8847",
+    "type":"Axure:Page",
+    "name":"注册",
+    "notes":{
+},
+    "style":{
+      "baseStyle":"627587b6038d43cca051c114ac41ad32",
+      "pageAlignment":"near",
+      "fill":{
+        "fillType":"solid",
+        "color":0xFFFFFFFF},
+      "image":null,
+      "imageHorizontalAlignment":"near",
+      "imageVerticalAlignment":"near",
+      "imageRepeat":"auto",
+      "favicon":null,
+      "sketchFactor":"0",
+      "colorStyle":"appliedColor",
+      "fontName":"Applied Font",
+      "borderWidth":"0"},
+    "adaptiveStyles":{
+},
+    "interactionMap":{
+},
+    "diagram":{
+      "objects":[{
+          "id":"64024e4d004642469ea587918f22f679",
+          "label":"",
+          "type":"referenceDiagramObject",
+          "styleType":"referenceDiagramObject",
+          "visible":true,
+          "style":{
+},
+          "adaptiveStyles":{
+},
+          "masterId":"f8ce3025faf24c03ac87966ecb347165"},
+{
+          "id":"bd67916e731e4406ae9505962ff79dfe",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"buttonShape",
+          "visible":true,
+          "style":{
+            "fontName":"'Applied Font Regular', 'Applied Font'",
+            "fill":{
+              "fillType":"solid",
+              "color":0xFFF2F2F2},
+            "location":{
+              "x":63,
+              "y":179},
+            "size":{
+              "width":323,
+              "height":421}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"519548879dbb4c1381c8a3ef38642fc6",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'Applied Font Regular', 'Applied Font'",
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFFF2F2F2},
+                "location":{
+                  "x":63,
+                  "y":179},
+                "size":{
+                  "width":323,
+                  "height":421}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/关于我们/u5.png"}},
+{
+          "id":"0ebba90734694041b142caa11f5dcbfe",
+          "label":"Button",
+          "type":"buttonShape",
+          "styleType":"buttonShape",
+          "visible":true,
+          "style":{
+            "fontName":"'Applied Font Bold', 'Applied Font'",
+            "fontSize":"14px",
+            "fontWeight":"bold",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFFFFFFFF,
+              "opacity":1},
+            "stateStyles":{
+              "mouseOver":{
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFF00CCFF}}},
+            "fill":{
+              "fillType":"solid",
+              "color":0xFF0099FF},
+            "location":{
+              "x":105,
+              "y":387},
+            "size":{
+              "width":229,
+              "height":40},
+            "borderWidth":"-1",
+            "borderFill":{
+              "fillType":"solid",
+              "color":0xFFCCCCCC},
+            "cornerRadiusTopLeft":"5.666672"},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"1acb092bb5934470a71f07bb64d767eb",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'Applied Font Bold', 'Applied Font'",
+                "fontSize":"14px",
+                "fontWeight":"bold",
+                "foreGroundFill":{
+                  "fillType":"solid",
+                  "color":0xFFFFFFFF,
+                  "opacity":1},
+                "stateStyles":{
+                  "mouseOver":{
+                    "fill":{
+                      "fillType":"solid",
+                      "color":0xFF00CCFF}}},
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFF0099FF},
+                "location":{
+                  "x":105,
+                  "y":387},
+                "size":{
+                  "width":229,
+                  "height":40},
+                "borderWidth":"-1",
+                "borderFill":{
+                  "fillType":"solid",
+                  "color":0xFFCCCCCC},
+                "cornerRadiusTopLeft":"5.666672"},
+              "adaptiveStyles":{
+}}],
+          "interactionMap":{
+            "onClick":{
+              "description":"OnClick",
+              "cases":[{
+                  "description":"用例 1<br> (If 选中状态值 买手判断 = 真)",
+                  "isNewIfGroup":false,
+                  "condition":{
+                    "exprType":"binaryOp",
+                    "op":"==",
+                    "leftExpr":{
+                      "exprType":"fcall",
+                      "functionName":"GetCheckState",
+                      "arguments":[{
+                          "exprType":"pathLiteral",
+                          "isThis":false,
+                          "isFocused":false,
+                          "isTarget":false,
+                          "value":["46ddc1ea46ab4751bbff7bd9c51c7927"]}]},
+                    "rightExpr":{
+                      "exprType":"booleanLiteral",
+                      "value":true}},
+                  "actions":[{
+                      "action":"linkWindow",
+                      "description":"在 当前窗口 打开 买手注册",
+                      "target":{
+                        "targetType":"page",
+                        "url":"买手注册.html",
+                        "includeVariables":true},
+                      "linkType":"current"}]},
+{
+                  "description":"用例 2<br> (Else If 选中状态值 买手判断 = 假)",
+                  "isNewIfGroup":false,
+                  "condition":{
+                    "exprType":"binaryOp",
+                    "op":"==",
+                    "leftExpr":{
+                      "exprType":"fcall",
+                      "functionName":"GetCheckState",
+                      "arguments":[{
+                          "exprType":"pathLiteral",
+                          "isThis":false,
+                          "isFocused":false,
+                          "isTarget":false,
+                          "value":["46ddc1ea46ab4751bbff7bd9c51c7927"]}]},
+                    "rightExpr":{
+                      "exprType":"booleanLiteral",
+                      "value":false}},
+                  "actions":[{
+                      "action":"linkWindow",
+                      "description":"在 当前窗口 打开 我的（登录后）",
+                      "target":{
+                        "targetType":"page",
+                        "url":"我的（登录后）.html",
+                        "includeVariables":true},
+                      "linkType":"current"}]}]}},
+          "tabbable":true,
+          "images":{
+            "normal~":"images/登录/button_u7.png",
+            "mouseOver~":"images/登录/button_u7_mouseOver.png"}},
+{
+          "id":"07711e6abd584e7a9af19ee205370772",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"buttonShape",
+          "visible":true,
+          "style":{
+            "fontName":"'Applied Font Regular', 'Applied Font'",
+            "fill":{
+              "fillType":"solid",
+              "color":0xFFE4E4E4},
+            "location":{
+              "x":105,
+              "y":197},
+            "size":{
+              "width":229,
+              "height":120}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"3338768e05574f5187deac31779a7bbe",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'Applied Font Regular', 'Applied Font'",
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFFE4E4E4},
+                "location":{
+                  "x":105,
+                  "y":197},
+                "size":{
+                  "width":229,
+                  "height":120}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/登录/u9.png"}},
+{
+          "id":"2465e0d95c174cc29d56f99a9ca657e4",
+          "label":"用户名",
+          "type":"textBox",
+          "styleType":"textBox",
+          "visible":true,
+          "style":{
+            "fontName":"'Applied Font Regular', 'Applied Font'",
+            "fontSize":"12px",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFFBCBCBC,
+              "opacity":1},
+            "location":{
+              "x":113,
+              "y":212},
+            "size":{
+              "width":200,
+              "height":30}},
+          "adaptiveStyles":{
+},
+          "interactionMap":{
+            "onFocus":{
+              "description":"OnFocus",
+              "cases":[{
+                  "description":"用例 1<br> (If 部件文字 用户名 = &quot;请输入用户名&quot;)",
+                  "isNewIfGroup":false,
+                  "condition":{
+                    "exprType":"binaryOp",
+                    "op":"==",
+                    "leftExpr":{
+                      "exprType":"fcall",
+                      "functionName":"GetWidgetText",
+                      "arguments":[{
+                          "exprType":"pathLiteral",
+                          "isThis":false,
+                          "isFocused":false,
+                          "isTarget":false,
+                          "value":["2465e0d95c174cc29d56f99a9ca657e4"]}]},
+                    "rightExpr":{
+                      "exprType":"stringLiteral",
+                      "value":"请输入用户名",
+                      "stos":[]}},
+                  "actions":[{
+                      "action":"setFunction",
+                      "description":"设置 部件文字 用户名 = &quot;&quot;",
+                      "expr":{
+                        "exprType":"block",
+                        "subExprs":[{
+                            "exprType":"fcall",
+                            "functionName":"SetWidgetFormText",
+                            "arguments":[{
+                                "exprType":"pathLiteral",
+                                "isThis":false,
+                                "isFocused":false,
+                                "isTarget":false,
+                                "value":["2465e0d95c174cc29d56f99a9ca657e4"]},
+{
+                                "exprType":"stringLiteral",
+                                "value":"",
+                                "stos":[]}]}]}}]}]},
+            "onLostFocus":{
+              "description":"OnLostFocus",
+              "cases":[{
+                  "description":"用例 1<br> (If 部件文字 用户名 = &quot;&quot;)",
+                  "isNewIfGroup":false,
+                  "condition":{
+                    "exprType":"binaryOp",
+                    "op":"==",
+                    "leftExpr":{
+                      "exprType":"fcall",
+                      "functionName":"GetWidgetText",
+                      "arguments":[{
+                          "exprType":"pathLiteral",
+                          "isThis":false,
+                          "isFocused":false,
+                          "isTarget":false,
+                          "value":["2465e0d95c174cc29d56f99a9ca657e4"]}]},
+                    "rightExpr":{
+                      "exprType":"stringLiteral",
+                      "value":"",
+                      "stos":[]}},
+                  "actions":[{
+                      "action":"setFunction",
+                      "description":"设置 部件文字 密码 = &quot;请输入密码&quot;",
+                      "expr":{
+                        "exprType":"block",
+                        "subExprs":[{
+                            "exprType":"fcall",
+                            "functionName":"SetWidgetFormText",
+                            "arguments":[{
+                                "exprType":"pathLiteral",
+                                "isThis":false,
+                                "isFocused":false,
+                                "isTarget":false,
+                                "value":["09de6acf17bb42e7922eaa0e8f55a087"]},
+{
+                                "exprType":"stringLiteral",
+                                "value":"请输入密码",
+                                "stos":[]}]}]}}]}]}},
+          "tabbable":true},
+{
+          "id":"09de6acf17bb42e7922eaa0e8f55a087",
+          "label":"密码",
+          "type":"textBox",
+          "styleType":"textBox",
+          "visible":true,
+          "style":{
+            "fontName":"'Applied Font Regular', 'Applied Font'",
+            "foreGroundFill":{
+              "fillType":"solid",
+              "color":0xFFBCBCBC,
+              "opacity":1},
+            "location":{
+              "x":113,
+              "y":263},
+            "size":{
+              "width":200,
+              "height":30}},
+          "adaptiveStyles":{
+},
+          "interactionMap":{
+            "onFocus":{
+              "description":"OnFocus",
+              "cases":[{
+                  "description":"用例 1<br> (If 部件文字 密码 = &quot;请输入密码&quot;)",
+                  "isNewIfGroup":false,
+                  "condition":{
+                    "exprType":"binaryOp",
+                    "op":"==",
+                    "leftExpr":{
+                      "exprType":"fcall",
+                      "functionName":"GetWidgetText",
+                      "arguments":[{
+                          "exprType":"pathLiteral",
+                          "isThis":false,
+                          "isFocused":false,
+                          "isTarget":false,
+                          "value":["09de6acf17bb42e7922eaa0e8f55a087"]}]},
+                    "rightExpr":{
+                      "exprType":"stringLiteral",
+                      "value":"请输入密码",
+                      "stos":[]}},
+                  "actions":[{
+                      "action":"setFunction",
+                      "description":"设置 部件文字 密码 = &quot;&quot;",
+                      "expr":{
+                        "exprType":"block",
+                        "subExprs":[{
+                            "exprType":"fcall",
+                            "functionName":"SetWidgetFormText",
+                            "arguments":[{
+                                "exprType":"pathLiteral",
+                                "isThis":false,
+                                "isFocused":false,
+                                "isTarget":false,
+                                "value":["09de6acf17bb42e7922eaa0e8f55a087"]},
+{
+                                "exprType":"stringLiteral",
+                                "value":"",
+                                "stos":[]}]}]}}]}]},
+            "onLostFocus":{
+              "description":"OnLostFocus",
+              "cases":[{
+                  "description":"用例 1<br> (If 部件文字 密码 = &quot;&quot;)",
+                  "isNewIfGroup":false,
+                  "condition":{
+                    "exprType":"binaryOp",
+                    "op":"==",
+                    "leftExpr":{
+                      "exprType":"fcall",
+                      "functionName":"GetWidgetText",
+                      "arguments":[{
+                          "exprType":"pathLiteral",
+                          "isThis":false,
+                          "isFocused":false,
+                          "isTarget":false,
+                          "value":["09de6acf17bb42e7922eaa0e8f55a087"]}]},
+                    "rightExpr":{
+                      "exprType":"stringLiteral",
+                      "value":"",
+                      "stos":[]}},
+                  "actions":[{
+                      "action":"setFunction",
+                      "description":"设置 部件文字 密码 = &quot;请输入密码&quot;",
+                      "expr":{
+                        "exprType":"block",
+                        "subExprs":[{
+                            "exprType":"fcall",
+                            "functionName":"SetWidgetFormText",
+                            "arguments":[{
+                                "exprType":"pathLiteral",
+                                "isThis":false,
+                                "isFocused":false,
+                                "isTarget":false,
+                                "value":["09de6acf17bb42e7922eaa0e8f55a087"]},
+{
+                                "exprType":"stringLiteral",
+                                "value":"请输入密码",
+                                "stos":[]}]}]}}]}]}},
+          "tabbable":true},
+{
+          "id":"ecf4ef1ed2574479bcc709505d5407fc",
+          "label":"",
+          "type":"buttonShape",
+          "styleType":"buttonShape",
+          "visible":true,
+          "style":{
+            "fontName":"'Applied Font Regular', 'Applied Font'",
+            "horizontalAlignment":"left",
+            "fill":{
+              "fillType":"solid",
+              "color":0xFFE4E4E4},
+            "location":{
+              "x":105,
+              "y":327},
+            "size":{
+              "width":229,
+              "height":50}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"a28413bc318f4cdbafc1c2869f8e28fa",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'Applied Font Regular', 'Applied Font'",
+                "horizontalAlignment":"left",
+                "fill":{
+                  "fillType":"solid",
+                  "color":0xFFE4E4E4},
+                "location":{
+                  "x":105,
+                  "y":327},
+                "size":{
+                  "width":229,
+                  "height":50}},
+              "adaptiveStyles":{
+}}],
+          "images":{
+            "normal~":"images/注册/u13.png"}},
+{
+          "id":"46ddc1ea46ab4751bbff7bd9c51c7927",
+          "label":"买手判断",
+          "type":"checkbox",
+          "styleType":"checkbox",
+          "visible":true,
+          "style":{
+            "fontName":"'Applied Font Regular', 'Applied Font'",
+            "location":{
+              "x":278,
+              "y":344},
+            "size":{
+              "width":40,
+              "height":16}},
+          "adaptiveStyles":{
+},
+          "objects":[{
+              "id":"f9527c15e41d46fc92a117b2a300d79b",
+              "label":"",
+              "isContained":true,
+              "type":"richTextPanel",
+              "styleType":"paragraph",
+              "visible":true,
+              "style":{
+                "fontName":"'Applied Font Regular', 'Applied Font'",
+                "location":{
+                  "x":278,
+                  "y":344},
+                "size":{
+                  "width":40,
+                  "height":16}},
+              "adaptiveStyles":{
+}}]},
+{
+          "id":"0d8d423e86b746bc8ec560007c539dcf",
+          "label":"",
+          "type":"referenceDiagramObject",
+          "styleType":"referenceDiagramObject",
+          "visible":true,
+          "style":{
+},
+          "adaptiveStyles":{
+},
+          "masterId":"54ba2665932c416d9a35042a8371c0fd"}]}},
+  "masters":{
+    "f8ce3025faf24c03ac87966ecb347165":{
+      "packageId":"f8ce3025faf24c03ac87966ecb347165",
+      "type":"Axure:Master",
+      "name":"手机不带菜单",
+      "notes":{
+},
+      "style":{
+        "baseStyle":"627587b6038d43cca051c114ac41ad32",
+        "pageAlignment":"near",
+        "fill":{
+          "fillType":"solid",
+          "color":0xFFFFFFFF},
+        "image":null,
+        "imageHorizontalAlignment":"near",
+        "imageVerticalAlignment":"near",
+        "imageRepeat":"auto",
+        "favicon":null,
+        "sketchFactor":"0",
+        "colorStyle":"appliedColor",
+        "fontName":"应用字体",
+        "borderWidth":"0"},
+      "adaptiveStyles":{
+},
+      "interactionMap":{
+},
+      "diagram":{
+        "objects":[{
+            "id":"8dc17a57d71a42e4b7ef940d37d46042",
+            "label":"",
+            "type":"imageBox",
+            "styleType":"imageBox",
+            "visible":true,
+            "style":{
+              "fontName":"'Applied Font Regular', 'Applied Font'",
+              "baseStyle":"627587b6038d43cca051c114ac41ad32",
+              "size":{
+                "width":450,
+                "height":731}},
+            "adaptiveStyles":{
+},
+            "objects":[{
+                "id":"da12161cc5c444caad5a5bbf1e421b92",
+                "label":"",
+                "isContained":true,
+                "type":"richTextPanel",
+                "styleType":"paragraph",
+                "visible":true,
+                "style":{
+                  "fontName":"'Applied Font Regular', 'Applied Font'",
+                  "baseStyle":"627587b6038d43cca051c114ac41ad32",
+                  "size":{
+                    "width":450,
+                    "height":731}},
+                "adaptiveStyles":{
+}}],
+            "images":{
+              "normal~":"images/主页/u3.png"}},
+{
+            "id":"ce91cf98290e44a1ad8a9f079025e7ee",
+            "label":"",
+            "type":"imageBox",
+            "styleType":"imageBox",
+            "visible":true,
+            "style":{
+              "fontName":"'Applied Font Regular', 'Applied Font'",
+              "baseStyle":"627587b6038d43cca051c114ac41ad32",
+              "location":{
+                "x":64,
+                "y":120},
+              "size":{
+                "width":322,
+                "height":23}},
+            "adaptiveStyles":{
+},
+            "objects":[{
+                "id":"53a4193308e14412a7bba1c2f3336f6d",
+                "label":"",
+                "isContained":true,
+                "type":"richTextPanel",
+                "styleType":"paragraph",
+                "visible":true,
+                "style":{
+                  "fontName":"'Applied Font Regular', 'Applied Font'",
+                  "baseStyle":"627587b6038d43cca051c114ac41ad32",
+                  "location":{
+                    "x":64,
+                    "y":120},
+                  "size":{
+                    "width":322,
+                    "height":23}},
+                "adaptiveStyles":{
+}}],
+            "images":{
+              "normal~":"images/主页/u13.png"}}]}},
+    "54ba2665932c416d9a35042a8371c0fd":{
+      "packageId":"54ba2665932c416d9a35042a8371c0fd",
+      "type":"Axure:Master",
+      "name":"头部",
+      "notes":{
+},
+      "style":{
+        "baseStyle":"627587b6038d43cca051c114ac41ad32",
+        "pageAlignment":"near",
+        "fill":{
+          "fillType":"solid",
+          "color":0xFFFFFFFF},
+        "image":null,
+        "imageHorizontalAlignment":"near",
+        "imageVerticalAlignment":"near",
+        "imageRepeat":"auto",
+        "favicon":null,
+        "sketchFactor":"0",
+        "colorStyle":"appliedColor",
+        "fontName":"应用字体",
+        "borderWidth":"0"},
+      "adaptiveStyles":{
+},
+      "interactionMap":{
+},
+      "diagram":{
+        "objects":[{
+            "id":"fc1cde7cbfd44a429c63bc03d2dad238",
+            "label":"",
+            "type":"flowShape",
+            "styleType":"flowShape",
+            "visible":true,
+            "style":{
+              "fontName":"'Applied Font Regular', 'Applied Font'",
+              "fill":{
+                "fillType":"linearGradient",
+                "colors":[{
+                    "color":0xFFFFCC00},
+{
+                    "color":0xFFFFCC00},
+{
+                    "color":0xFFE4E4E4},
+{
+                    "color":0xFFE4E4E4}]},
+              "location":{
+                "x":66,
+                "y":146},
+              "size":{
+                "width":320,
+                "height":33},
+              "borderFill":{
+                "fillType":"solid",
+                "color":0xFFFFCC00}},
+            "adaptiveStyles":{
+},
+            "objects":[{
+                "id":"d541aa5abb104593ade50bf5a901d62a",
+                "label":"",
+                "isContained":true,
+                "type":"richTextPanel",
+                "styleType":"paragraph",
+                "visible":true,
+                "style":{
+                  "fontName":"'Applied Font Regular', 'Applied Font'",
+                  "fill":{
+                    "fillType":"linearGradient",
+                    "colors":[{
+                        "color":0xFFFFCC00},
+{
+                        "color":0xFFFFCC00},
+{
+                        "color":0xFFE4E4E4},
+{
+                        "color":0xFFE4E4E4}]},
+                  "location":{
+                    "x":66,
+                    "y":146},
+                  "size":{
+                    "width":320,
+                    "height":33},
+                  "borderFill":{
+                    "fillType":"solid",
+                    "color":0xFFFFCC00}},
+                "adaptiveStyles":{
+}}],
+            "images":{
+              "normal~":"images/主页/u47.png"}},
+{
+            "id":"48c043db19e443daaad28b6565e9af35",
+            "label":"",
+            "type":"imageBox",
+            "styleType":"imageBox",
+            "visible":true,
+            "style":{
+              "fontName":"'Applied Font Regular', 'Applied Font'",
+              "location":{
+                "x":104,
+                "y":150},
+              "size":{
+                "width":30,
+                "height":24}},
+            "adaptiveStyles":{
+},
+            "objects":[{
+                "id":"5652abe7da524d7da0ee59ff511d08e3",
+                "label":"",
+                "isContained":true,
+                "type":"richTextPanel",
+                "styleType":"paragraph",
+                "visible":true,
+                "style":{
+                  "fontName":"'Applied Font Regular', 'Applied Font'",
+                  "location":{
+                    "x":104,
+                    "y":150},
+                  "size":{
+                    "width":30,
+                    "height":24}},
+                "adaptiveStyles":{
+}}],
+            "images":{
+              "normal~":"images/主页/u49.png"}},
+{
+            "id":"94cedad53c8240e7af186aba7201be8b",
+            "label":"",
+            "type":"imageBox",
+            "styleType":"imageBox",
+            "visible":true,
+            "style":{
+              "fontName":"'Applied Font Regular', 'Applied Font'",
+              "location":{
+                "x":73,
+                "y":149},
+              "size":{
+                "width":24,
+                "height":24},
+              "borderWidth":"-1"},
+            "adaptiveStyles":{
+},
+            "objects":[{
+                "id":"8c0b6ea0e91d4e26a56c66d1b5393392",
+                "label":"",
+                "isContained":true,
+                "type":"richTextPanel",
+                "styleType":"paragraph",
+                "visible":true,
+                "style":{
+                  "fontName":"'Applied Font Regular', 'Applied Font'",
+                  "location":{
+                    "x":73,
+                    "y":149},
+                  "size":{
+                    "width":24,
+                    "height":24},
+                  "borderWidth":"-1"},
+                "adaptiveStyles":{
+}}],
+            "interactionMap":{
+              "onClick":{
+                "description":"OnClick",
+                "cases":[{
+                    "description":"用例 1",
+                    "isNewIfGroup":false,
+                    "actions":[{
+                        "action":"linkWindow",
+                        "description":"在 当前窗口 打开 返回",
+                        "target":{
+                          "targetType":"backUrl",
+                          "includeVariables":false},
+                        "linkType":"current"}]}]}},
+            "tabbable":true,
+            "images":{
+              "normal~":"images/我的代购订单/u42.png"}}]}}},
+  "objectPaths":{
+    "64024e4d004642469ea587918f22f679":{
+      "scriptId":"u0",
+      "8dc17a57d71a42e4b7ef940d37d46042":{
+        "scriptId":"u1"},
+      "da12161cc5c444caad5a5bbf1e421b92":{
+        "scriptId":"u2"},
+      "ce91cf98290e44a1ad8a9f079025e7ee":{
+        "scriptId":"u3"},
+      "53a4193308e14412a7bba1c2f3336f6d":{
+        "scriptId":"u4"}},
+    "bd67916e731e4406ae9505962ff79dfe":{
+      "scriptId":"u5"},
+    "519548879dbb4c1381c8a3ef38642fc6":{
+      "scriptId":"u6"},
+    "0ebba90734694041b142caa11f5dcbfe":{
+      "scriptId":"u7"},
+    "1acb092bb5934470a71f07bb64d767eb":{
+      "scriptId":"u8"},
+    "07711e6abd584e7a9af19ee205370772":{
+      "scriptId":"u9"},
+    "3338768e05574f5187deac31779a7bbe":{
+      "scriptId":"u10"},
+    "2465e0d95c174cc29d56f99a9ca657e4":{
+      "scriptId":"u11"},
+    "09de6acf17bb42e7922eaa0e8f55a087":{
+      "scriptId":"u12"},
+    "ecf4ef1ed2574479bcc709505d5407fc":{
+      "scriptId":"u13"},
+    "a28413bc318f4cdbafc1c2869f8e28fa":{
+      "scriptId":"u14"},
+    "46ddc1ea46ab4751bbff7bd9c51c7927":{
+      "scriptId":"u15"},
+    "f9527c15e41d46fc92a117b2a300d79b":{
+      "scriptId":"u16"},
+    "0d8d423e86b746bc8ec560007c539dcf":{
+      "scriptId":"u17",
+      "fc1cde7cbfd44a429c63bc03d2dad238":{
+        "scriptId":"u18"},
+      "d541aa5abb104593ade50bf5a901d62a":{
+        "scriptId":"u19"},
+      "48c043db19e443daaad28b6565e9af35":{
+        "scriptId":"u20"},
+      "5652abe7da524d7da0ee59ff511d08e3":{
+        "scriptId":"u21"},
+      "94cedad53c8240e7af186aba7201be8b":{
+        "scriptId":"u22"},
+      "8c0b6ea0e91d4e26a56c66d1b5393392":{
+        "scriptId":"u23"}}}});
