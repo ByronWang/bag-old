@@ -3,16 +3,15 @@
       <button class="button button-icon icon ion-bag"  x-ng-click="doCart()">
       </button>
     </ion-nav-buttons>
-  <ion-nav-bar class="bar-positive">
-    <ion-nav-back-button>
-      Back
-    </ion-nav-back-button>
-    <div class="buttons right-buttons">
-      <button class="button">
-        Right Button
-      </button>
-    </div>
-  </ion-nav-bar>
+	<ion-nav-buttons side="right">
+    <select>
+      <option>美国</option>
+      <option selected>日本</option>
+      <option>韩国</option>
+      <option>德国</option>
+      <option>法国</option>
+    </select>
+    </ion-nav-buttons>
   <ion-content class="has-header">
     <div class="list">
       <a ng-repeat="inventory in inventorys"  class="item"  href="#/tab/inventory/{{inventory.id}}">
