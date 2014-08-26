@@ -3,24 +3,46 @@ angular.module('starter.services', [])
 /**
  * A simple example service that returns some data.
  */
-.factory('Friends', function() {
+.factory('Inventorys', function() {
   // Might use a resource here that returns a JSON array
 
   // Some fake testing data
-  var friends = [
-    { id: 0, name: 'Scruff McGruff' },
-    { id: 1, name: 'G.I. Joe' },
-    { id: 2, name: 'Miss Frizzle' },
-    { id: 3, name: 'Ash Ketchum' }
+  var inventorys = [
+    { id: 0, name: '自然堂凝时鲜颜肌活乳液', type:'化妆品', orderFrom:'韩国代购',amount:'3000元',seller:'买手一'},
+    { id: 1, name: '苹果手机' , type:'数码', orderFrom:'美国代购',amount:'5000元',seller:'买手一'},
+    { id: 2, name: '花王婴儿尿布' , type:'妇婴', orderFrom:'日本代购',amount:'500元',seller:'买手一'},
+    { id: 3, name: '惠氏奶粉' , type:'妇婴', orderFrom:'美国代购',amount:'290元',seller:'买手一'},
   ];
 
   return {
     all: function() {
-      return friends;
+      return inventorys;
     },
-    get: function(friendId) {
+    get: function(inventoryId) {
       // Simple index lookup
-      return friends[friendId];
+      return inventorys[inventoryId];
     }
   }
-});
+})
+
+.factory('Orders', function() {
+	  // Might use a resource here that returns a JSON array
+
+	  // Some fake testing data
+	  var orders = [
+	    { id: 0, name: 'Scruff McGruff',type:'法国代购' },
+	    { id: 1, name: 'G.I. Joe' ,type:'法国代购'},
+	    { id: 2, name: 'Miss Frizzle' ,type:'法国代购'},
+	    { id: 3, name: 'Ash Ketchum' ,type:'法国代购'}
+	  ];
+
+	  return {
+	    all: function() {
+	      return orders;
+	    },
+	    get: function(orderId) {
+	      // Simple index lookup
+	      return orders[orderId];
+	    }
+	  }
+	});

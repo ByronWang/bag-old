@@ -48,24 +48,88 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       }
     })
 
-    .state('tab.friends', {
-      url: '/friends',
+    .state('tab.inventorys', {
+      url: '/inventorys',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/tab-friends.html',
-          controller: 'FriendsCtrl'
+        'tab-inventorys': {
+          templateUrl: 'templates/tab-inventorys.html',
+          controller: 'InventorysCtrl'
         }
       }
     })
-    .state('tab.friend-detail', {
-      url: '/friend/:friendId',
+    .state('tab.inventory-detail', {
+      url: '/inventory/:inventoryId',
       views: {
-        'tab-friends': {
-          templateUrl: 'templates/friend-detail.html',
-          controller: 'FriendDetailCtrl'
+        'tab-inventorys': {
+          templateUrl: 'templates/inventory-detail.html',
+          controller: 'InventoryDetailCtrl'
         }
       }
     })
+    
+    .state('tab.orders', {
+        url: '/orders',
+        views: {
+          'tab-orders': {
+            templateUrl: 'templates/tab-orders.html',
+            controller: 'OrdersCtrl'
+          }
+        }
+      })
+      
+      
+    .state('tab.orders-forMe', {
+        url: '/orders-forMe',
+        views: {
+          'tab-orders': {
+            templateUrl: 'templates/orders-forMe.html',
+            controller: 'OrdersCtrl'
+          }
+        }
+      })
+      
+      
+    .state('tab.orders-fromMe', {
+        url: '/orders-fromMe',
+        views: {
+          'tab-orders': {
+            templateUrl: 'templates/orders-fromMe.html',
+            controller: 'OrdersCtrl'
+          }
+        }
+      })
+      
+      
+    .state('tab.orders-completed', {
+        url: '/orders-completed',
+        views: {
+          'tab-orders': {
+            templateUrl: 'templates/orders-completed.html',
+            controller: 'OrdersCtrl'
+          }
+        }
+      })
+      
+      
+    .state('tab.orders-sendout', {
+        url: '/orders-sendout',
+        views: {
+          'tab-orders': {
+            templateUrl: 'templates/orders-sendout.html',
+            controller: 'OrdersCtrl'
+          }
+        }
+      })
+      
+      .state('tab.order-detail', {
+        url: '/order/:orderId',
+        views: {
+          'tab-orders': {
+            templateUrl: 'templates/order-detail.html',
+            controller: 'OrderDetailCtrl'
+          }
+        }
+      })
 
     .state('tab.account', {
       url: '/account',
@@ -75,10 +139,80 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           controller: 'AccountCtrl'
         }
       }
-    });
+    })
+    
+    .state('tab.account-setting', {
+        url: '/accounts/setting',
+        views: {
+          'tab-account': {
+            templateUrl: 'templates/account-setting.html',
+            controller: 'AccountCtrl'
+          }
+        }
+      })
+      
+      .state('tab.account-about', {
+          url: '/accounts/about',
+          views: {
+            'tab-account': {
+              templateUrl: 'templates/account-about.html',
+              controller: 'AccountCtrl'
+            }
+          }
+      })
+      
+      .state('tab.account-exchangerate', {
+          url: '/accounts/exchangerate',
+          views: {
+            'tab-account': {
+              templateUrl: 'templates/account-exchangerate.html',
+              controller: 'AccountCtrl'
+            }
+          }
+      })
+      
+      .state('tab.account-account', {
+          url: '/accounts/account',
+          views: {
+            'tab-account': {
+              templateUrl: 'templates/account-account.html',
+              controller: 'AccountCtrl'
+            }
+          }
+      })
+      
+      .state('tab.account-message', {
+          url: '/accounts/message',
+          views: {
+            'tab-account': {
+              templateUrl: 'templates/account-message.html',
+              controller: 'AccountCtrl'
+            }
+          }
+      })
+        
+      .state('tab.account-myorders', {
+          url: '/accounts/myorders',
+          views: {
+            'tab-account': {
+              templateUrl: 'templates/account-myorders.html',
+              controller: 'AccountCtrl'
+            }
+          }
+      })
+      .state('tab.account-legal', {
+          url: '/accounts/legal',
+          views: {
+            'tab-account': {
+              templateUrl: 'templates/account-legal.html',
+              controller: 'AccountCtrl'
+            }
+          }
+      })
+      
+      ;
 
   // if none of the above states are matched, use this as the fallback
   $urlRouterProvider.otherwise('/tab/dash');
 
 });
-

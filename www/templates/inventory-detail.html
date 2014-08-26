@@ -1,0 +1,35 @@
+<!--
+  This template loads for the 'tab.inventory-detail' state (app.js)
+  'inventory' is a $scope variable created in the InventorysCtrl controller (controllers.js)
+  The InventorysCtrl pulls data from the Inventorys service (service.js)
+  The Inventorys service returns an array of inventory data
+-->
+<ion-view title="{{inventory.name}}">      
+	<ion-nav-buttons side="left">
+      <button class="button button-icon icon ion-bag"  x-ng-click="doCart()">
+      </button>
+    </ion-nav-buttons>
+  <ion-content has-header="true" padding="true">
+  	<div>
+	  	<div>
+	  		<img src="img/u10.png" class="float-left"/>
+		  	<div>
+			  	<pre>
+			{{inventory.name}}
+			容量：120ml
+			
+			代购国家：{{inventory.orderFrom}}
+			</pre>
+			</div>
+  		</div>
+		<div>
+			  	<pre>  
+所购商品超出指定价格：按实际价格购买
+邮寄方式： 买家转运
+所购商品缺货：购买其他物品
+			</pre>
+		</div>
+  	</div>
+  	
+  </ion-content>
+</ion-view>

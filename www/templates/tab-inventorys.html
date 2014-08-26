@@ -1,0 +1,25 @@
+<ion-view title="清单">
+	<ion-nav-buttons side="left">
+      <button class="button button-icon icon ion-bag"  x-ng-click="doCart()">
+      </button>
+    </ion-nav-buttons>
+  <ion-nav-bar class="bar-positive">
+    <ion-nav-back-button>
+      Back
+    </ion-nav-back-button>
+    <div class="buttons right-buttons">
+      <button class="button">
+        Right Button
+      </button>
+    </div>
+  </ion-nav-bar>
+  <ion-content class="has-header">
+    <div class="list">
+      <a ng-repeat="inventory in inventorys"  class="item"  href="#/tab/inventory/{{inventory.id}}">
+        <h2>{{inventory.name}}</h2>   
+      		<p>{{inventory.type}}&nbsp;{{inventory.amount}}&nbsp;{{inventory.orderFrom}}<br>
+      		{{inventory.seller}}</p>
+      </a>
+    </div>
+  </ion-content>
+</ion-view>
