@@ -1,5 +1,44 @@
 <ion-view title="主页">
+<style>
+div.blue{
+	background-color: blue;
+	height: 100px;
+}
+
+div.yellow{
+	background-color: yellow;
+	height: 100px;
+}
+
+div.pink{
+	background-color: pink;
+	height: 100px;
+}
+div.slide{
+	height: 200px;
+}
+</style>
   <ion-content class="has-header padding">
-    <h1>Dash</h1>
+  <ion-slide-box does-continue=true auto-play=true slide-interval=2000>
+    <ion-slide>
+    <a  href="#/tab/product/1">
+      <div class="box blue">
+        Next slide!
+      </div></a>
+    </ion-slide>
+    <ion-slide>
+    <a  href="#/tab/product/2">
+      <div class="box yellow">
+        Slide 2!
+      </div></a>
+    </ion-slide>
+  </ion-slide-box>
+  
+  <div class="row responsive-sm">
+  <div class="col">.col</div>
+  <div class="col">.col</div>
+  <div class="col">.col</div>
+  <div class="col">.col</div>
+</div>
   </ion-content>
 </ion-view>

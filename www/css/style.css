@@ -1,1 +1,7 @@
 /* Empty. Add your own CSS if you like */
+
+table tr th{
+	text-align: left;
+	font-size: 60%;
+	width: 4em;
+}

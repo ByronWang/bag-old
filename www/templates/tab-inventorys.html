@@ -15,10 +15,29 @@
   <ion-content class="has-header">
     <div class="list">
       <a ng-repeat="inventory in inventorys"  class="item"  href="#/tab/inventory/{{inventory.id}}">
-        <h2>{{inventory.name}}</h2>   
-      		<p>{{inventory.type}}&nbsp;{{inventory.amount}}&nbsp;{{inventory.orderFrom}}<br>
-      		{{inventory.seller}}</p>
-      </a>
-    </div>
+			<div>
+				<table>
+					<tbody>
+			  		<tr>
+			  			<th>购买地：</th>
+			  			<td>{{inventory.orderFrom}}</td>
+			  		</tr>
+			  		<tr>
+			  			<th>类&nbsp;&nbsp;型：</th>
+			  			<td>{{inventory.type}}</td>
+			  		</tr>
+			  		<tr>
+			  			<th>总金额：</th>
+			  			<td>{{inventory.amount}}</td>
+			  		</tr>
+			  		<tr>
+			  			<th>竞单期限：</th>
+			  			<td>{{inventory.deadline}}</td>
+			  		</tr>
+			  		</tbody>
+		  			<tfoot><tr><th rowspan="2">已有{{inventory.cntBuyer}}10位买手参与此次购买</th></tr></tfoot>
+		  	</table>
+      </div>
+    </a>
   </ion-content>
 </ion-view>

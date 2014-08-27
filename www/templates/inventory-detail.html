@@ -14,12 +14,28 @@
 	  	<div>
 	  		<img src="img/u10.png" class="float-left"/>
 		  	<div>
-			  	<pre>
-			{{inventory.name}}
-			容量：120ml
-			
-			代购国家：{{inventory.orderFrom}}
-			</pre>
+		  	<table>
+		  	<tbody>
+		  		<tr>
+		  			<th>购买地</th>
+		  			<td>{{inventory.orderFrom}}</td>
+		  		</tr>
+		  		<tr>
+		  			<th>类型</th>
+		  			<td>{{inventory.type}}</td>
+		  		</tr>
+		  		<tr>
+		  			<th>总金额</th>
+		  			<td>{{inventory.amount}}</td>
+		  		</tr>
+		  		<tr>
+		  			<th>竟单期限</th>
+		  			<td>{{inventory.deadline}}</td>
+		  		</tr>
+		  		</tbody>
+		  		<tfoot><tr><th rowspan="2">已有{{inventory.cntBuyer}}10位买手参与此次购买</th></tr></tfoot>
+		  	</table>
+		  	
 			</div>
   		</div>
 		<div>
