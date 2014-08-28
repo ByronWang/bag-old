@@ -17,8 +17,26 @@ div.pink{
 div.slide{
 	height: 200px;
 }
+div.span{
+	height: 50px;
+	width: 50px;
+}
+
+div.col{
+	text-align: center;
+}
+a.button{
+	width: 80%;
+}
+
 </style>
   <ion-content class="has-header padding">
+	<ion-nav-buttons side="right">
+      
+      <button class="button button-icon icon ion-bag" x-ng-click="doCart()">
+	    <span  class="badge badge-positive">5</span>
+     </button>
+    </ion-nav-buttons>
   <ion-slide-box does-continue=true auto-play=true slide-interval=2000>
     <ion-slide>
     <a  href="#/tab/product/1">
@@ -33,12 +51,13 @@ div.slide{
       </div></a>
     </ion-slide>
   </ion-slide-box>
-  
-  <div class="row responsive-sm">
-  <div class="col">.col</div>
-  <div class="col">.col</div>
-  <div class="col">.col</div>
-  <div class="col">.col</div>
-</div>
+	<div class="row maggin">
+	  <div class="col"><a href="#/tab/products" class="button button-outline button-positive"">化妆品</a></div>
+	  <div class="col"><a href="#/tab/products" class="button button-outline button-positive"">母婴</a></div>
+	</div>
+	  <div class="row">
+	  <div class="col"><a href="#/tab/products" class="button button-outline button-positive"">数码</a></div>
+	  <div class="col"><a href="#/tab/products" class="button button-outline button-positive"">奢侈品</a></div>
+	</div>
   </ion-content>
 </ion-view>

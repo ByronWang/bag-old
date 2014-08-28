@@ -225,7 +225,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
           views: {
             'tab-account': {
               templateUrl: 'templates/account-legal.html',
-              controller: 'AccountCtrl'
+              controller: 'TestCtrl'
             }
           }
       })

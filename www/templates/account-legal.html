@@ -1,5 +1,15 @@
 <ion-view title="服务条款">
   	<ion-content class="has-header padding">
-    	服务条款
-    </ion-content>
+  	
+  	
+  	
+  <div class="list">
+    <div class="item" ng-repeat="item in items">
+      {{item}}
+    </div>
+  </div>
+
+  <ion-infinite-scroll on-infinite="loadMoreItems()" icon="ion-loading-c">
+  </ion-infinite-scroll>
+ </ion-content>
 </ion-view>

@@ -5,3 +5,9 @@ table tr th{
 	font-size: 60%;
 	width: 4em;
 }
+
+.button .badge {
+  position: relative;
+  top: -10px; 
+  left:-50px;
+  }

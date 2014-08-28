@@ -30,10 +30,10 @@ angular.module('starter.services', [])
 
 	  // Some fake testing data
 	  var products = [
-	    { id: 0, name: 'Scruff McGruff',orderFrom:'法国代购',price:500 },
-	    { id: 1, name: 'G.I. Joe' ,orderFrom:'法国代购',price:500},
-	    { id: 2, name: 'Miss Frizzle' ,orderFrom:'法国代购',price:500},
-	    { id: 3, name: 'Ash Ketchum' ,orderFrom:'法国代购',price:5000}
+	    { id: 0, name: 'Scruff McGruff',orderFrom:'法国',price:500,lastMonth:1 },
+	    { id: 1, name: 'G.I. Joe' ,orderFrom:'日本',price:500,lastMonth:1},
+	    { id: 2, name: 'Miss Frizzle' ,orderFrom:'美国',price:500,lastMonth:1},
+	    { id: 3, name: 'Ash Ketchum' ,orderFrom:'法国',price:5000,lastMonth:1}
 	  ];
 
 	  return {
