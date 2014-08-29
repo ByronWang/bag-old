@@ -1,5 +1,23 @@
 angular.module('starter.controllers', [])
 
+.controller('GlobalCtrl', function($scope,LoginUser) {
+	$scope.user = LoginUser.get();
+	$scope.cart = {
+			cnt:0,
+			size:function(){
+				return this.cnt;
+			},
+			Items:[]};
+	$scope.doCart = function(){
+		alert("from global");
+	};
+	$scope.addToCart = function(order){
+		$scope.cart.Items.push(order);
+		$scope.cart.cnt = $scope.cart.cnt  + 1;
+	};
+	
+})
+
 .controller('DashCtrl', function($scope, $ionicSlideBoxDelegate) {
 
 })
@@ -21,12 +39,20 @@ angular.module('starter.controllers', [])
 
 .controller('ProductDetailCtrl', function($scope, $stateParams, Products) {
   $scope.product = Products.get($stateParams.productId);
-
+  $scope.selectThis = function(){
+	  $scope.addToCart($scope.product);
+	  return false;
+  };
 })
 
 
 .controller('OrdersCtrl', function($scope, Orders) {
   $scope.orders = Orders.all();
+  
+  //Load more after 1 second delay
+  $scope.loadMoreItems = function() {
+     $scope.$broadcast('scroll.infiniteScrollComplete');
+  };
 })
 
 .controller('OrderDetailCtrl', function($scope, $stateParams, Orders) {
