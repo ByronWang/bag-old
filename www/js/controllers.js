@@ -50,7 +50,10 @@ angular.module('starter.controllers', [])
 	  };
 })
 
-.controller('AccountCtrl', function($scope) {
+.controller('AccountCtrl', function($scope,LoginUser) {
+	LoginUser.requireUser($scope,function(user){
+		$scope.currentUser = user;
+	});
 });
 
 

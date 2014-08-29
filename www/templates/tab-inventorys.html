@@ -4,7 +4,8 @@
       </button>
     </ion-nav-buttons>
 	<ion-nav-buttons side="right">
-    <select>
+    <select ng-model="country">
+      <option value="">----</option>
       <option>美国</option>
       <option selected>日本</option>
       <option>韩国</option>
@@ -14,13 +15,13 @@
     </ion-nav-buttons>
   <ion-content class="has-header">
     <div class="list">
-      <a ng-repeat="inventory in inventorys"  class="item"  href="#/tab/inventory/{{inventory.id}}">
+      <a ng-repeat="inventory in inventorys | filter:country"  class="item"  href="#/tab/inventory/{{inventory.id}}">
 			<div>
 				<table>
 					<tbody>
 			  		<tr>
 			  			<th>购买地：</th>
-			  			<td>{{inventory.orderFrom}}</td>
+			  			<td>{{inventory.country}}</td>
 			  		</tr>
 			  		<tr>
 			  			<th>类&nbsp;&nbsp;型：</th>

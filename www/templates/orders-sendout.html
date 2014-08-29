@@ -1,8 +1,11 @@
 <ion-view title="已发布订单">
   <ion-content class="has-header">
     <div class="list">
-      <a x-ng-repeat="order in orders"  class="item"  href="#/tab/order/{{order.id}}">
-        {{order.name}}
+      <a x-ng-repeat="item in orders"  class="item item-avatar item-button-right"  href="#/tab/order/{{order.id}}">
+      <img src="img/u10.png">
+      <pre>{{item.name}}      （ {{item.country}} ）
+		价格：{{item.expectedPrice}}/元   
+		到货周期：{{item.lastMonth}}个月</pre>
       </a>
 	</div>
   </ion-content>
