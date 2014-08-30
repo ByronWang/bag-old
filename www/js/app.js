@@ -98,22 +98,31 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
       })
       
       
-    .state('tab.orders-forMe', {
-        url: '/orders-forMe',
+    .state('tab.orders-cart', {
+        url: '/orders-cart',
         views: {
           'tab-orders': {
-            templateUrl: 'templates/orders-forMe.html',
+            templateUrl: 'templates/orders-cart.html',
+            controller: 'OrdersCtrl'
+          }
+        }
+      })     
+      
+    .state('tab.orders-sendout', {
+        url: '/orders-sendout',
+        views: {
+          'tab-orders': {
+            templateUrl: 'templates/orders-sendout.html',
             controller: 'OrdersCtrl'
           }
         }
       })
       
-      
-    .state('tab.orders-fromMe', {
-        url: '/orders-fromMe',
+    .state('tab.orders-requested', {
+        url: '/orders-requested',
         views: {
           'tab-orders': {
-            templateUrl: 'templates/orders-fromMe.html',
+            templateUrl: 'templates/orders-requested.html',
             controller: 'OrdersCtrl'
           }
         }
@@ -130,16 +139,16 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services'])
         }
       })
       
-      
-    .state('tab.orders-sendout', {
-        url: '/orders-sendout',
-        views: {
-          'tab-orders': {
-            templateUrl: 'templates/orders-sendout.html',
-            controller: 'OrdersCtrl'
+      .state('tab.orders-requestedCompleted', {
+          url: '/orders-requestedCompleted',
+          views: {
+            'tab-orders': {
+              templateUrl: 'templates/orders-requestedCompleted.html',
+              controller: 'OrdersCtrl'
+            }
           }
-        }
-      })
+        })
+      
       
       .state('tab.order-detail', {
         url: '/order/:orderId',

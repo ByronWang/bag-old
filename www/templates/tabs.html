@@ -3,8 +3,7 @@
   Each tab's child <ion-nav-view> directive will have its own 
   navigation history that also transitions its views in and out.
 -->
-<ion-tabs class="tabs-icon-top">
-
+<ion-tabs class="tabs-icon-top tabs-stable">
 
   <!-- Dashboard Tab -->
   <ion-tab title="首页" icon="icon ion-home" href="#/tab/dash">
@@ -18,7 +17,16 @@
   </ion-tab>
 
   <!-- Account Tab -->
-  <ion-tab title="订单" icon="icon ion-clipboard" href="#/tab/orders">
+  <ion-tab title="订单" icon="icon ion-clipboard" href="#/tab/orders-completed">
+	<div class="bar bar-subheader">
+		<div class="button-bar">
+		  <a class="button button-clear" href="#/tab/orders-cart">购物车</a>
+		  <a class="button button-clear" href="#/tab/orders-sendout">已发布</a>
+		  <a class="button button-clear" href="#/tab/orders-completed">已完成</a>
+		  <a class="button button-clear" href="#/tab/orders-requested">代购</a>
+		  <a class="button button-clear" href="#/tab/orders-requestedCompleted">代购完成</a>
+		</div>
+	</div>
     <ion-nav-view name="tab-orders"></ion-nav-view>
   </ion-tab>
 

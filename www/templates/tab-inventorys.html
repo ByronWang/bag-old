@@ -1,8 +1,4 @@
 <ion-view title="清单">
-	<ion-nav-buttons side="left">
-      <button class="button button-icon icon ion-bag"  x-ng-click="doCart()">
-      </button>
-    </ion-nav-buttons>
 	<ion-nav-buttons side="right">
     <select ng-model="country">
       <option value="">----</option>
@@ -14,29 +10,31 @@
     </select>
     </ion-nav-buttons>
   <ion-content class="has-header">
-    <div class="list">
-      <a ng-repeat="inventory in inventorys | filter:country"  class="item"  href="#/tab/inventory/{{inventory.id}}">
+  
+      <div class="list padding-top" x-ng-repeat="inventory in inventorys | filter:country" >
+    
+	   <div class="item item-divider">
+	    	{{inventory.country}} &nbsp;	    	{{inventory.date}}
+	  </div>
+  
+      <a ng-repeat="item in inventory.Items"  class="item"  href="#/tab/inventory/{{inventory.id}}">
 			<div>
 				<table>
 					<tbody>
 			  		<tr>
-			  			<th>购买地：</th>
-			  			<td>{{inventory.country}}</td>
-			  		</tr>
-			  		<tr>
 			  			<th>类&nbsp;&nbsp;型：</th>
-			  			<td>{{inventory.type}}</td>
+			  			<td>{{item.type}}</td>
 			  		</tr>
 			  		<tr>
 			  			<th>总金额：</th>
-			  			<td>{{inventory.amount}}</td>
+			  			<td>{{item.amount}}</td>
 			  		</tr>
 			  		<tr>
 			  			<th>竞单期限：</th>
-			  			<td>{{inventory.deadline}}</td>
+			  			<td>{{item.deadline}}</td>
 			  		</tr>
 			  		</tbody>
-		  			<tfoot><tr><th rowspan="2">已有{{inventory.cntBuyer}}10位买手参与此次购买</th></tr></tfoot>
+		  			<tfoot><tr><th rowspan="2">已有{{item.cntBuyer}}10位买手参与此次购买</th></tr></tfoot>
 		  	</table>
       </div>
     </a>

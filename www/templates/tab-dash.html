@@ -16,28 +16,98 @@ a.button{
 	width: 80%;
 }
 
+.row{
+	padding: 0px;
+}
+.row .col{
+	text-align: left;
+	padding:0px;
+}
+
+.row .col.done{
+	border-top: solid red 1px;
+}
+
+.row .col.doing{
+	border-top: solid black 1px;
+}
+
+.prog.doing,.done .prog I{
+	color: red;
+}
+
+.col.right div.prog{
+	background-color:white;	
+	position: relative;
+	left: -.6em;
+	top: -.8em;
+	width: 1em;
+	text-align: center;
+	height:10em;
+}
+
 </style>
   <ion-content class="has-header padding">
-	<ion-nav-buttons side="right">      
-      <button class="button button-icon icon ion-bag" x-ng-click="doCart()">
-	    <span  class="badge badge-positive">{{cart.size()}}</span>
+	<ion-nav-buttons side="left">    
+  		<img src="img/u10.png">
+	</ion-nav-buttons>
+	<ion-nav-buttons side="right">    
+      <button class="button button-icon icon ion-search" x-ng-click="doCart()">
      </button>
   </ion-nav-buttons>
+  
+  <div class="row">
+		<div class="col">
+			  <div class="row">
+			  		<div class="col"></div>	  
+			  		<div class="col done right"><div class="prog"><i class="icon icon ion-ios7-checkmark-outline" ></i>发布中</div></div>
+			  </div>
+		</div>
+		<div class="col">
+			  <div class="row">
+			  		<div class="col done"></div>	  
+			  		<div class="col done right"><div class="prog"><i class="icon icon ion-ios7-checkmark-outline" ></i>代购中</div></div>
+			  </div>
+		</div>
+		<div class="col">
+			  <div class="row">
+			  		<div class="col done"></div>	  
+			  		<div class="col doing right"><div class="prog doing"><i class="icon icon ion-ios7-ionic-outline" ></i>支付转运</div></div>
+			  </div>
+		</div>
+		<div class="col">
+			  <div class="row">
+			  		<div class="col doing"></div>	  
+			  		<div class="col doing right"><div class="prog "><i class="icon icon ion-ios7-circle-outline" ></i>收货中</div></div>
+			  </div>
+		</div>
+		<div class="col">
+			  <div class="row">
+			  		<div class="col doing"></div>	  
+			  		<div class="col right"><div class="prog"><i class="icon icon ion-ios7-circle-outline" ></i>完成</div></div>
+			  </div>
+		</div>
+</div>
   
   <ion-slide-box does-continue=true auto-play=true slide-interval=2000>
     <ion-slide>
     <a  href="#/tab/product/1">
-      <div class="box blue">
-        Next slide!
+      <div id="s1" class="box blue">
+        <img alt="1111" src="img/A001.jpg">
       </div></a>
     </ion-slide>
     <ion-slide>
     <a  href="#/tab/product/2">
-      <div class="box yellow">
-        Slide 2!
+      <div id="s2" class="box yellow">
+        <img alt="2222" src="img/A002.jpg">
       </div></a>
     </ion-slide>
   </ion-slide-box>
+  
+  <a icon="icon ion-home">
+  	<i class="icon icon ion-home" ></i>  
+  	<span class="tab-title ng-binding" ng-bind-html="title">首页</span>
+  </a>
   
 	<div class="row maggin">
 	  <div class="col"><a href="#/tab/products" class="button button-outline button-positive"">化妆品</a></div>

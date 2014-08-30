@@ -10,6 +10,8 @@
       <button class="button button-icon icon ion-bag" x-ng-click="doCart()">
 	    <span  class="badge badge-positive">{{cart.size()}}</span>
      </button>
+      <button class="button button-icon icon ion-search" x-ng-click="doCart()">
+     </button>
   </ion-nav-buttons>
     <div class="list">
       <a x-ng-repeat="item in products"  class="item item-avatar"  href="#/tab/product/{{item.id}}">
@@ -21,3 +23,14 @@
 	</div>
   </ion-content>
 </ion-view>
+
+<script id="product-search.html" type="text/ng-template">
+  <ion-popover-view>
+    <ion-header-bar>
+      <h1 class="title">My Popover Title</h1>
+    </ion-header-bar>
+    <ion-content>
+      Hello!
+    </ion-content>
+  </ion-popover-view>
+</script>

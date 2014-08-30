@@ -8,11 +8,30 @@ angular.module('starter.services', [])
 
   // Some fake testing data
   var inventorys = [
+		            {	country:'韩国',
+		            	date:'2013-11-11',
+		            	Items:[
+	    		    { id: 0, name: '自然堂凝时鲜颜肌活乳液', type:'化妆品', description:"",amount:3,expectedPrice:'3000元',seller:'买手二'}
+	            	 ]		            	
+		            },
+		            {country:'美国',
+		            	date:'2013-11-11',
+		            	Items:[
 	    		    { id: 0, name: '自然堂凝时鲜颜肌活乳液', type:'化妆品', country:'韩国',description:"",amount:3,expectedPrice:'3000元',seller:'买手二'},
 	    		    { id: 1, name: '苹果手机' , type:'数码', country:'美国',description:"",amount:2,expectedPrice:'5000元',seller:'买手一'},
 	    		    { id: 2, name: '花王婴儿尿布' , type:'妇婴', country:'日本',description:"",amount:9,expectedPrice:'500元',seller:'买手一'},
 	    		    { id: 3, name: '惠氏奶粉' , type:'妇婴', country:'美国',description:"",amount:6,expectedPrice:'290元',seller:'买手一'}
-  ];
+	            	 ]		            	
+		            },
+		            {country:'韩国',
+		            	date:'2013-11-11',
+		            	Items:[
+	    		    { id: 0, name: '自然堂凝时鲜颜肌活乳液', type:'化妆品', country:'韩国',description:"",amount:3,expectedPrice:'3000元',seller:'买手二'},
+	    		    { id: 1, name: '苹果手机' , type:'数码', country:'美国',description:"",amount:2,expectedPrice:'5000元',seller:'买手一'}
+	            	 ]		            	
+		            }
+	  ];
+
 
   return {
     all: function() {
