@@ -1,0 +1,57 @@
+<ion-view title="主页">
+<style>
+div.box{
+	height: 100px;
+	text-align: center;
+}
+div.span{
+	height: 50px;
+	width: 50px;
+}
+
+div.col{
+	text-align: center;
+}
+a.button{
+	width: 80%;
+}
+
+</style>
+  <ion-content class="has-header padding">
+	<ion-nav-buttons side="right">      
+      <button class="button button-icon icon ion-bag" x-ng-click="doCart()">
+	    <span  class="badge badge-positive">{{cart.size()}}</span>
+     </button>
+  </ion-nav-buttons>
+  
+  <ion-slide-box does-continue=true auto-play=true slide-interval=2000>
+    <ion-slide>
+    <a  href="#/tab/product/1">
+      <div id="s1" class="box blue">
+        <img alt="1111" src="img/A001.jpg">
+      </div></a>
+    </ion-slide>
+    <ion-slide>
+    <a  href="#/tab/product/2">
+      <div id="s2" class="box yellow">
+        <img alt="2222" src="img/A002.jpg">
+      </div></a>
+    </ion-slide>
+  </ion-slide-box>
+  
+  <a icon="icon ion-home">
+  	<i class="icon icon ion-home" ></i>  
+  	<span class="tab-title ng-binding" ng-bind-html="title">首页</span>
+  </a>
+  
+  
+	<div class="row maggin">
+	  <div class="col"><a href="#/tab/products" class="button button-outline button-positive"">化妆品</a></div>
+	  <div class="col"><a href="#/tab/products" class="button button-outline button-positive"">母婴</a></div>
+	</div>
+	  <div class="row">
+	  <div class="col"><a href="#/tab/products" class="button button-outline button-positive"">数码</a></div>
+	  <div class="col"><a href="#/tab/products" class="button button-outline button-positive"">奢侈品</a></div>
+	</div>
+  </ion-content>
+</ion-view>
