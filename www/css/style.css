@@ -74,4 +74,55 @@ img.main{
   text-overflow: inherit;
   white-space: normal; 
 }
+
+.thumbnails_lists a{
+	padding: 5px;
+  float:left;
+  width: 100px;
+  height: 120px;
+  text-align: center;
+}
+
+.thumbnails_lists a img{
+	height: 80px;
+	width: 80px;
+	box-shadow: 1px 1px 1px #bbbbbb;
+}
+
+.icon_lists a{
+  float:left;
+  width: 80px;
+  height: 80px;
+  text-align: center;
+}
+
+.icon_lists .name{
+	overflow: hidden;
+}
+.icon_lists .icon{
+  font-size: 32px;
+  line-height: 60px;
+  margin: 10px 0;
+  color:#333;
+  -webkit-transition: font-size 0.25s ease-out 0s;
+  -moz-transition: font-size 0.25s ease-out 0s;
+  transition: font-size 0.25s ease-out 0s;
+  
+  padding:5px;
+  border-radius: 6px 6px;
+  background-color: OrangeRed;
+}
+
+.icon_lists .icon:hover{
+}
+
+.list.layout{
+	border: none;
+	padding: 0em;	
+}
+.list.layout .item{
+	border: none;
+	padding: 10px 0px;
+}
+
   

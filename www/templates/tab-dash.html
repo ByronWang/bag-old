@@ -4,50 +4,12 @@ div.box{
 	height: 100px;
 	text-align: center;
 }
-div.span{
-	height: 50px;
-	width: 50px;
-}
 
-div.col{
-	text-align: center;
-}
-a.button{
-	width: 80%;
-}
-
-.row{
-	padding: 0px;
-}
-.row .col{
-	text-align: left;
-	padding:0px;
-}
-
-.row .col.done{
-	border-top: solid red 1px;
-}
-
-.row .col.doing{
-	border-top: solid black 1px;
-}
-
-.prog.doing,.done .prog I{
-	color: red;
-}
-
-.col.right div.prog{
-	background-color:white;	
-	position: relative;
-	left: -.6em;
-	top: -.8em;
-	width: 1em;
-	text-align: center;
-	height:10em;
+.box img{
+	width: 100%
 }
 
 </style>
-  <ion-content class="has-header padding">
 	<ion-nav-buttons side="left">    
   		<img src="img/logo3.png" height="32px" width="32px">
 	</ion-nav-buttons>
@@ -55,6 +17,7 @@ a.button{
       <button class="button button-icon icon ion-search" x-ng-click="doCart()">
      </button>
   </ion-nav-buttons>
+  <ion-content class="has-header ">
   
   
   <ion-slide-box does-continue=true auto-play=true slide-interval=2000>
@@ -72,18 +35,204 @@ a.button{
     </ion-slide>
   </ion-slide-box>
   
-  <a icon="icon ion-home">
-  	<i class="icon icon ion-home" ></i>  
-  	<span class="tab-title ng-binding" ng-bind-html="title">首页</span>
-  </a>
   
-	<div class="row maggin">
-	  <div class="col"><a href="#/tab/products" class="button button-outline button-positive"">化妆品</a></div>
-	  <div class="col"><a href="#/tab/products" class="button button-outline button-positive"">母婴</a></div>
-	</div>
-	  <div class="row">
-	  <div class="col"><a href="#/tab/products" class="button button-outline button-positive"">数码</a></div>
-	  <div class="col"><a href="#/tab/products" class="button button-outline button-positive"">奢侈品</a></div>
-	</div>
+  <div class="list layout">
+      <div class="item thumbnails_lists clear">
+             <a href="#/tab/products">
+             	<img src="img/u10.png"></img>
+                 <div class="name">个护化妆-01</div>
+             </a>
+         
+             <a href="#/tab/products">
+             	<img src="img/u10.png"></img>
+                 <div class="name">个护化妆-01</div>
+             </a>
+         
+             <a href="#/tab/products">
+             	<img src="img/u10.png"></img>
+                 <div class="name">个护化妆-01</div>
+             </a>
+             <a href="#/tab/products">
+             	<img src="img/u10.png"></img>
+                 <div class="name">个护化妆-01</div>
+             </a>
+             <a href="#/tab/products">
+             	<img src="img/u10.png"></img>
+                 <div class="name">个护化妆-01</div>
+             </a>
+             <a href="#/tab/products">
+             	<img src="img/u10.png"></img>
+                 <div class="name">个护化妆-01</div>
+             </a>
+        </div>
+        
+        
+       <div class="item icon_lists clear">
+             <a href="#/tab/products">
+             <i class="icon iconfont icon-gehuhuazhuang01"></i>
+                 <div class="name">个护化妆-01</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xf0006;</i>
+                 <div class="name">个护化妆-02</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xe601;</i>
+                 <div class="name">钻石珠宝</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xe651;</i>
+                 <div class="name">珠宝</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#x348f;</i>
+                 <div class="name">电脑</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xe63c;</i>
+                 <div class="name">笔记本电脑</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xe617;</i>
+                 <div class="name">电脑端</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#x3437;</i>
+                 <div class="name">数码</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xe653;</i>
+                 <div class="name">数码</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xf000d;</i>
+                 <div class="name">数码家电</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xe64e;</i>
+                 <div class="name">高跟鞋</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xf009a;</i>
+                 <div class="name">高跟鞋</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xf006f;</i>
+                 <div class="name">登山鞋</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xe708;</i>
+                 <div class="name">时尚服饰</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xf0004;</i>
+                 <div class="name">服装鞋靴-01</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xe61a;</i>
+                 <div class="name">服装服饰</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xf000f;</i>
+                 <div class="name">箱包皮具-01</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xe658;</i>
+                 <div class="name">鞋靴箱包</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#x3478;</i>
+                 <div class="name">回流区日用百货</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#x3438;</i>
+                 <div class="name">冰箱</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xf0071;</i>
+                 <div class="name">冰箱</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xf0092;</i>
+                 <div class="name">照相机</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xf0065;</i>
+                 <div class="name">洗衣机</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xe671;</i>
+                 <div class="name">医疗</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xe656;</i>
+                 <div class="name">医疗</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#x343f;</i>
+                 <div class="name">药品</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xf0066;</i>
+                 <div class="name">体育02</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xf0006;</i>
+                 <div class="name">乒乓球</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xf0009;</i>
+                 <div class="name">足球</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xe63b;</i>
+                 <div class="name">母婴</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xf01d7;</i>
+                 <div class="name">玩耍的孩子</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#xf0085;</i>
+                 <div class="name">酒</div>
+             </a>
+         
+             <a href="#/tab/products">
+             <i class="icon iconfont">&#x3435;</i>
+                 <div class="name">更多</div>
+             </a>            
+     </div>
+     </div>
   </ion-content>
 </ion-view>
