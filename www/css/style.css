@@ -39,3 +39,39 @@ table tr th{
  	background: none;
  }
  
+ .item-value {
+  float: right;
+  color: black;
+  font-size: 14px; 
+ }
+ 
+ .list.view{
+ 	border: none;
+ 	background: none;
+ }
+ 
+.list.view .item{
+ 	border: none;
+ 	background: none;
+ 	padding: 1px;
+} 
+  
+.view-button .item-avatar{
+  	min-height: 44px;
+}
+  
+.view-button .item-avatar .button{
+  	top: 18px;
+}
+
+img.main{
+	width: 160px;
+	height: 160px;	
+}
+
+.item-graph {
+  overflow: auto;
+  text-overflow: inherit;
+  white-space: normal; 
+}
+  
