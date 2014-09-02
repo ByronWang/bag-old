@@ -55,8 +55,14 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('OrderDetailCtrl', function($scope, $stateParams, Orders) {
+.controller('OrderDetailCtrl', function($scope, $stateParams,$ionicSlideBoxDelegate, Orders) {
   $scope.order = Orders.get($stateParams.orderId);
+  $scope.slide = function(to){
+	  $ionicSlideBoxDelegate.$getByHandle("orderStatus").slide(to);
+  };
+  
+  
+  
 })
 
 .controller('TestCtrl', function($scope, $http) {

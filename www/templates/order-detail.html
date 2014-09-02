@@ -4,8 +4,41 @@
   The FriendsCtrl pulls data from the Friends service (service.js)
   The Friends service returns an array of friend data
 -->
+<style>
+.row{
+	padding: 0px;
+	padding-top: 10px;
+}
+.row .col{
+	text-align: left;
+	padding:0px;
+}
+
+.row .col.done{
+	border-top: solid red 1px;
+}
+
+.row .col.doing{
+	border-top: solid black 1px;
+}
+
+.prog.doing,.done .prog I{
+	color: red;
+}
+
+.col.right div.prog{
+	background-color:white;	
+	position: relative;
+	left: -.6em;
+	top: -.8em;
+	width: 1em;
+	text-align: center;
+	height:10em;
+}
+
+</style>
 <ion-view title="{{order.name}}">
-  <ion-content has-header="true" padding="true">
+  <ion-content has-header="true" padding="true" class="has-subheader">
   <div class="list card">
 <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue=true auto-play=false show-pager=false>
   <ion-slide>
@@ -22,6 +55,58 @@
       consists of tabs, icons aligned left, within the card-footer.
     </p>
   </div>
+
+  <div class="row">
+		<div class="col">
+			  <div class="row">
+			  		<div class="col"></div>	  
+			  		<div class="col done right"><div class="prog" ng-click="slide(0)"><i class="icon icon ion-ios7-checkmark-outline" ></i>发布中</div></div>
+			  </div>
+		</div>
+		<div class="col">
+			  <div class="row">
+			  		<div class="col done"></div>	  
+			  		<div class="col done right"><div class="prog" ng-click="slide(1)"><i class="icon icon ion-ios7-checkmark-outline" ></i>代购中</div></div>
+			  </div>
+		</div>
+		<div class="col">
+			  <div class="row">
+			  		<div class="col done"></div>	  
+			  		<div class="col doing right"><div class="prog doing" ng-click="slide(2)"><i class="icon icon ion-ios7-ionic-outline" ></i>支付转运</div></div>
+			  </div>
+		</div>
+		<div class="col">
+			  <div class="row">
+			  		<div class="col doing"></div>	  
+			  		<div class="col doing right"><div class="prog" ng-click="slide(3)"><i class="icon icon ion-ios7-circle-outline" ></i>收货中</div></div>
+			  </div>
+		</div>
+		<div class="col">
+			  <div class="row">
+			  		<div class="col doing"></div>	  
+			  		<div class="col right"><div class="prog" ng-click="slide(4)"><i class="icon icon ion-ios7-circle-outline" ></i>完成</div></div>
+			  </div>
+		</div>
+</div>
+
+
+<ion-slide-box delegate-handle="orderStatus" show-pager="false" on-slide-changed="slideHasChanged($index)">
+  <ion-slide>
+    <div class="box blue"><h1>发布中</h1></div>
+  </ion-slide>
+  <ion-slide>
+    <div class="box yellow"><h1>代购中</h1></div>
+  </ion-slide>
+  <ion-slide>
+    <div class="box pink"><h1>支付转运</h1></div>
+  </ion-slide>
+  <ion-slide>
+    <div class="box pink"><h1>收货中</h1></div>
+  </ion-slide>
+  <ion-slide>
+    <div class="box pink"><h1>完成</h1></div>
+  </ion-slide>
+</ion-slide-box>
 
   <div class="item tabs tabs-secondary tabs-icon-left">
     <a class="tab-item" href="#">
