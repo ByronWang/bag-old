@@ -49,9 +49,10 @@
 </style>
 <ion-view title="{{order.name}}">
   <ion-content has-header="true" padding="true" class="has-subheader">
-  <div class="list card">
 <ion-slide-box on-slide-changed="slideHasChanged($index)" does-continue=true auto-play=false show-pager=false>
   <ion-slide>
+  
+  <div class="list card">
   <div class="item item-avatar">
     <img src="mcfly.jpg">
     <h2>AAAAAAAAAA McFly</h2>
@@ -64,8 +65,7 @@
       the content is from a card-body consisting of an image and paragraph text. The footer
       consists of tabs, icons aligned left, within the card-footer.
     </p>
-  </div>
-
+    
   <div class="row pager">
   		<div class="col first"></div>	  
   		<div class="col done"><div class="prog" ng-click="slide($event.target,0)"><i class="icon ion-ios7-checkmark-outline" ></i>发布中</div></div>
@@ -78,8 +78,6 @@
   		<div class="col"></div>	  
   		<div class="col last"><div class="prog" ng-click="slide($event.target,4)"><i class="icon ion-ios7-circle-outline" ></i>完成</div></div>
 </div>
-
-
 <ion-slide-box delegate-handle="orderStatus" show-pager="false" on-slide-changed="slideHasChanged($index)">
   <ion-slide>
     <div class="box blue"><h1>发布中</h1></div>
@@ -98,34 +96,43 @@
   </ion-slide>
 </ion-slide-box>
 
+  </div>
+
   <div class="item tabs tabs-secondary tabs-icon-left">
     <a class="tab-item" href="#">
       <i class="icon ion-share"></i>
       我也想买
     </a>
   </div>
+  </div>
+  
  </ion-slide>
   <ion-slide>
-  <div class="item item-avatar">
-    <img src="mcfly.jpg">
-    <h2>BBBBBBBBBBBBB McFly</h2>
-    <p>November 05, 1955</p>
+  
+  <div class="list card">
+	  <div class="item item-avatar">
+	    <img src="mcfly.jpg">
+	    <h2>BBBBBBBBBBBBB McFly</h2>
+	    <p>November 05, 1955</p>
+	  </div>
+	
+	  <div class="item item-body">
+	    <p>
+	      This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
+	      the content is from a card-body consisting of an image and paragraph text. The footer
+	      consists of tabs, icons aligned left, within the card-footer.
+	    </p>
+	  </div>
+	
+	  <div class="item tabs tabs-secondary tabs-icon-left">
+	    <a class="tab-item" href="#">
+	      <i class="icon ion-share"></i>
+	      我也想买
+	    </a>
+	  </div>
+	  <div></div>
   </div>
-
-  <div class="item item-body">
-    <p>
-      This is a "Facebook" styled Card. The header is created from a Thumbnail List item,
-      the content is from a card-body consisting of an image and paragraph text. The footer
-      consists of tabs, icons aligned left, within the card-footer.
-    </p>
-  </div>
-
-  <div class="item tabs tabs-secondary tabs-icon-left">
-    <a class="tab-item" href="#">
-      <i class="icon ion-share"></i>
-      我也想买
-    </a>
-  </div>
+  
  </ion-slide>
  </ion-slide-box>
  

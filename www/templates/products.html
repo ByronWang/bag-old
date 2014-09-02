@@ -10,8 +10,6 @@
       <button class="button button-icon icon ion-bag" x-ng-click="doCart()">
 	    <span  class="badge badge-positive">{{cart.size()}}</span>
      </button>
-      <button class="button button-icon icon ion-search" x-ng-click="doCart()">
-     </button>
   </ion-nav-buttons>
     <div class="list">
       <a x-ng-repeat="item in products"  class="item item-avatar"  href="#/tab/product/{{item.id}}">

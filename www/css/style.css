@@ -31,3 +31,11 @@ table tr th{
 .bar-subheader .tabs .tab-item.tab-item-active{
   	border-bottom: solid 1px red;
  }
+
+ .bar-subheader{
+ 	padding: 0px;
+ }
+ .bar-subheader .tabs{
+ 	background: none;
+ }
+ 
