@@ -5,28 +5,18 @@
   The Friends service returns an array of friend data
 -->
 <style>
-.row{
+.row.pager{
 	padding: 0px;
 	padding-top: 10px;
+	color: gray;
 }
-.row .col{
+.row.pager .col{
+	border-top: solid DarkGray 1px;
 	text-align: left;
 	padding:0px;
 }
 
-.row .col.done{
-	border-top: solid red 1px;
-}
-
-.row .col.doing{
-	border-top: solid black 1px;
-}
-
-.prog.doing,.done .prog I{
-	color: red;
-}
-
-.col.right div.prog{
+.row.pager .col div.prog{
 	background-color:white;	
 	position: relative;
 	left: -.6em;
@@ -34,6 +24,26 @@
 	width: 1em;
 	text-align: center;
 	height:10em;
+}
+
+.row.pager .col.done{
+	border-top: solid #f58220 1px;	
+	color: black;	
+}
+.row.pager .col.done .icon{
+	color: #f58220;	
+}
+
+.row.pager .col.doing{
+	color: #f58220;
+}
+
+.row.pager  .col.first, .row.pager .col.last{
+	border-top: solid white 1px;	
+}
+
+.prog.active{
+	font-weight: bold;
 }
 
 </style>
@@ -56,37 +66,17 @@
     </p>
   </div>
 
-  <div class="row">
-		<div class="col">
-			  <div class="row">
-			  		<div class="col"></div>	  
-			  		<div class="col done right"><div class="prog" ng-click="slide(0)"><i class="icon icon ion-ios7-checkmark-outline" ></i>发布中</div></div>
-			  </div>
-		</div>
-		<div class="col">
-			  <div class="row">
-			  		<div class="col done"></div>	  
-			  		<div class="col done right"><div class="prog" ng-click="slide(1)"><i class="icon icon ion-ios7-checkmark-outline" ></i>代购中</div></div>
-			  </div>
-		</div>
-		<div class="col">
-			  <div class="row">
-			  		<div class="col done"></div>	  
-			  		<div class="col doing right"><div class="prog doing" ng-click="slide(2)"><i class="icon icon ion-ios7-ionic-outline" ></i>支付转运</div></div>
-			  </div>
-		</div>
-		<div class="col">
-			  <div class="row">
-			  		<div class="col doing"></div>	  
-			  		<div class="col doing right"><div class="prog" ng-click="slide(3)"><i class="icon icon ion-ios7-circle-outline" ></i>收货中</div></div>
-			  </div>
-		</div>
-		<div class="col">
-			  <div class="row">
-			  		<div class="col doing"></div>	  
-			  		<div class="col right"><div class="prog" ng-click="slide(4)"><i class="icon icon ion-ios7-circle-outline" ></i>完成</div></div>
-			  </div>
-		</div>
+  <div class="row pager">
+  		<div class="col first"></div>	  
+  		<div class="col done"><div class="prog" ng-click="slide($event.target,0)"><i class="icon ion-ios7-checkmark-outline" ></i>发布中</div></div>
+  		<div class="col done"></div>	  
+  		<div class="col done"><div class="prog" ng-click="slide($event.target,1)"><i class="icon ion-ios7-checkmark-outline" ></i>代购中</div></div>
+  		<div class="col done"></div>	  
+  		<div class="col doing"><div class="prog" ng-click="slide($event.target,2)"><i class="icon ion-ios7-ionic-outline" ></i>支付转运</div></div>
+  		<div class="col"></div>	  
+  		<div class="col"><div class="prog" ng-click="slide($event.target,3)"><i class="icon ion-ios7-circle-outline" ></i>收货中</div></div>
+  		<div class="col"></div>	  
+  		<div class="col last"><div class="prog" ng-click="slide($event.target,4)"><i class="icon ion-ios7-circle-outline" ></i>完成</div></div>
 </div>
 
 

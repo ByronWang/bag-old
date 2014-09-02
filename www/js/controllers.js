@@ -26,6 +26,14 @@ angular.module('starter.controllers', [])
   $scope.inventorys = Inventorys.all();
 })
 
+.controller('tabsMenuCtrl', function($scope) {
+  $scope.showThis = function(e){
+	  var ele = angular.element(e);
+	  ele.parent().find("a").removeClass("tab-item-active"); 
+	  ele.addClass("tab-item-active");
+  };
+})
+
 .controller('InventoryDetailCtrl', function($scope, $stateParams, Inventorys) {
   $scope.inventory = Inventorys.get($stateParams.inventoryId);  
   $scope.slideHasChanged=function($index){
@@ -57,8 +65,14 @@ angular.module('starter.controllers', [])
 
 .controller('OrderDetailCtrl', function($scope, $stateParams,$ionicSlideBoxDelegate, Orders) {
   $scope.order = Orders.get($stateParams.orderId);
-  $scope.slide = function(to){
+  $scope.slide = function(e,to){
 	  $ionicSlideBoxDelegate.$getByHandle("orderStatus").slide(to);
+	  var ele = angular.element(e);
+	  angular.forEach(ele.parent().parent().find("div"),function(i){
+		  var ie =angular.element(i);
+		 if(ie.hasClass("active"))ie.removeClass("active"); 
+	  });
+	  ele.addClass("active");
   };
   
   

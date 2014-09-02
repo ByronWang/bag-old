@@ -20,5 +20,14 @@ table tr th{
   	color: red;
   }
   .item{
-  font-size: 10px;
+  	font-size: 10px;
   }
+
+.bar-subheader .tabs{
+	line-height: 33px;
+	padding-top: 17px;	
+}
+
+.bar-subheader .tabs .tab-item.tab-item-active{
+  	border-bottom: solid 1px red;
+ }
