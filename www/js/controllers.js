@@ -5,15 +5,26 @@ angular.module('starter.controllers', [])
 	$scope.cart = {
 			cnt:0,
 			size:function(){
-				return this.cnt;
+				return this.Items.length;
 			},
 			Items:[]};
 	$scope.doCart = function(){
 		alert("from global");
 	};
 	$scope.addToCart = function(order){
-		$scope.cart.Items.push(order);
-		$scope.cart.cnt = $scope.cart.cnt  + 1;
+		var hasExist = false;
+		angular.forEach($scope.cart.Items,function(o){
+			if(o.id == order.id){
+				hasExist = true;
+			}
+		});
+		if(hasExist){
+			order.amount = order.amount + 1;
+		}else{
+			order.amount = 1;
+			$scope.cart.Items.push(order);
+			$scope.cart.cnt = $scope.cart.cnt  + 1;			
+		}
 	};
 	
 })

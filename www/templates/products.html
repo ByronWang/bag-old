@@ -7,9 +7,9 @@
 <ion-view title="宝贝一览">
   <ion-content class="has-header">
 	<ion-nav-buttons side="right">      
-      <button class="button button-icon icon ion-bag" x-ng-click="doCart()">
+      <a class="button button-icon icon ion-bag" href="#/tab/orders-cart">
 	    <span  class="badge badge-positive">{{cart.size()}}</span>
-     </button>
+     </a>
   </ion-nav-buttons>
     <div class="list">
       <a x-ng-repeat="item in products"  class="item item-avatar"  href="#/tab/product/{{item.id}}">
