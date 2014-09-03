@@ -99,25 +99,29 @@ img.main{
 .icon_lists a{
   float:left;
   width: 80px;
-  height: 80px;
+  height: 82px;
   text-align: center;
+  text-decoration: none;
 }
 
 .icon_lists .name{
 	overflow: hidden;
+  	text-decoration: none;
+  	color: black;
 }
 .icon_lists .icon{
-  font-size: 32px;
+  font-size: 38px;
   line-height: 60px;
   margin: 10px 0;
-  color:#333;
+  color:white;
   -webkit-transition: font-size 0.25s ease-out 0s;
   -moz-transition: font-size 0.25s ease-out 0s;
   transition: font-size 0.25s ease-out 0s;
   
-  padding:5px;
-  border-radius: 6px 6px;
+  padding:6px;
+  border-radius: 12px 12px;
   background-color: OrangeRed;
+  text-decoration: none;
 }
 
 .icon_lists .icon:hover{
