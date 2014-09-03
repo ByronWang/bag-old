@@ -63,8 +63,27 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('OrderDetailCtrl', function($scope, $stateParams,$ionicSlideBoxDelegate, Orders) {
+.controller('OrderDetailCtrl', function($scope, $stateParams,$ionicSlideBoxDelegate,$timeout, Orders) {
   $scope.order = Orders.get($stateParams.orderId);
+  $scope.item = Orders.getItem($stateParams.orderId,$stateParams.itemId);
+  $scope.$curStatus = $scope.item.statusid;
+  
+  $scope.initSlide = function(){
+	  if($scope.item.statusid>2){
+		  return $scope.item.statusid-2;
+	  }else{
+		  return $scope.item.statusid-1;
+	  }
+  };
+  $scope.$watch($scope.item.statusid,function(){
+	  if($scope.item.statusid){
+		  $timeout( function() {
+		      $scope.$broadcast('slideBox.setSlide', $scope.initSlide());
+		  }, 300);
+	  };
+  });
+
+  
   $scope.slide = function(e,to){
 	  $ionicSlideBoxDelegate.$getByHandle("orderStatus").slide(to);
 	  var ele = angular.element(e);
@@ -74,9 +93,13 @@ angular.module('starter.controllers', [])
 	  });
 	  ele.addClass("active");
   };
-  
-  
-  
+
+  $scope.onSwipeLeft = function(){
+	  $scope.order.name = "Left";
+  };
+  $scope.onSwipeRight = function(){
+	  $scope.order.name = "Right";	  
+  };
 })
 
 .controller('TestCtrl', function($scope, $http) {
