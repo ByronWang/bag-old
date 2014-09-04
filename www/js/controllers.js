@@ -97,6 +97,16 @@ angular.module('starter.controllers', [])
 		$scope.closeModal();
 	};
 })
+.controller('FilterCtrl', function($scope,$state) {
+	$scope.ok = function(country){
+		$scope.country = country;
+		$scope.closeModal();
+	};
+	
+	$scope.cancel = function(){
+		$scope.closeModal();
+	};
+})
 .controller('CartCtrl', function($scope, $ionicSlideBoxDelegate) {
 
 })
@@ -115,8 +125,26 @@ angular.module('starter.controllers', [])
 	  };
 })
 
-.controller('InventorysCtrl', function($scope, Inventorys) {
+.controller('InventorysCtrl', function($scope,$ionicModal, Inventorys) {
+	$scope.country = "美国";
   $scope.inventorys = Inventorys.all();
+	$scope.filter = function(){
+		  $ionicModal.fromTemplateUrl('templates/modal-filter.html', {
+		    scope: $scope,
+		    animation: 'slide-in-up'
+		  }).then(function(modal) {
+		    $scope.modal = modal;
+		    $scope.modal.show();
+		  });
+		
+		  $scope.openModal = function() {
+		    $scope.modal.show();
+		  };
+		  
+		  $scope.closeModal = function() {	    			  
+		    $scope.modal.hide();
+		  };	
+	};
 })
 
 .controller('tabsMenuCtrl', function($scope) {

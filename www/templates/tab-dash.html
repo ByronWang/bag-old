@@ -15,11 +15,13 @@ div.box{
 	</ion-nav-buttons>
 	<ion-nav-buttons side="right">    
       <button class="button button-icon icon ion-search" x-ng-click="search()">
-     </button>
+     </button> 
+      <a class="button button-icon icon ion-plus" x-ng-click="editCart()">
+     </a>
   </ion-nav-buttons>
   <ion-content class="has-header ">
   
-  
+  <!-- 
   <ion-slide-box does-continue=true auto-play=true slide-interval=2000>
     <ion-slide>
     <a  href="#/tab/product/1">
@@ -33,7 +35,7 @@ div.box{
         <img alt="2222" src="img/A002.jpg">
       </div></a>
     </ion-slide>
-  </ion-slide-box>
+  </ion-slide-box> -->
   
   
   <div class="list layout">
@@ -55,7 +57,7 @@ div.box{
         </div>
         
         
-       <div class="item icon_lists clear">
+       <div class="item icon_lists clear text-center">
          
              <a href="#/tab/products">
              <i class="icon iconfont" style="background-color: blue">&#xf0006;</i>
