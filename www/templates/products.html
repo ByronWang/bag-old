@@ -1,9 +1,4 @@
-<style>
-.list .item-avatar pre{
-	font-size: 40%;
-	line-height: 120%;
-} 
-</style>
+
 <ion-view title="宝贝一览">
   <ion-content class="has-header">
 	<ion-nav-buttons side="right">      
@@ -14,7 +9,7 @@
     <div class="list">
       <a x-ng-repeat="item in products"  class="item item-avatar"  href="#/tab/product/{{item.id}}">
  		<img src="img/u10.png">
-      <pre>{{item.name}}      （ {{item.orderFrom}} ）
+      <pre>{{item.name}}      （ {{item.country}} ）
 		价格：{{item.price}}/元   
 		到货周期：{{item.lastMonth}}个月</pre>
       </a>    
