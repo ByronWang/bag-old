@@ -1,14 +1,8 @@
 <ion-view title="清单">
-	<ion-nav-buttons side="right">
-    <select ng-model="country">
-      <option value="">----</option>
-      <option>美国</option>
-      <option selected>日本</option>
-      <option>韩国</option>
-      <option>德国</option>
-      <option>法国</option>
-    </select>
-    </ion-nav-buttons>
+	<ion-nav-buttons side="right">      
+      <a class="button button-icon icon ion-plus" x-ng-click="filter()">
+     </a>
+  </ion-nav-buttons>
   <ion-content class="has-header">
   
       <div class="list padding-top" x-ng-repeat="inventory in inventorys | filter:country" >
