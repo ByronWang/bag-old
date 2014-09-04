@@ -176,3 +176,27 @@ img.main{
 
 .item-avatar.item-complex, .item-avatar-left.item-complex, .item-checkbox-thumbnail-left.item-complex {
   padding-left: 0; }
+
+  
+  
+ .item-range-input{
+ 	padding-right: 10px;
+ }
+  .item-range-input .seperator{ 
+    -webkit-box-flex: 1;
+    -webkit-flex: 1 0 10px;
+    -moz-box-flex: 1;
+    -moz-flex: 1 0 10px;
+    -ms-flex: 1 0 10px;
+    flex: 1 0 10px;
+ }
+ 
+ .item-input.item-range-input input{
+    -webkit-box-flex: 10;
+    -webkit-flex: 10 0 40px;
+    -moz-box-flex: 10;
+    -moz-flex: 10 0 40px;
+    -ms-flex: 10 0 40px;
+    flex: 10 0 40px;
+ }
+ 

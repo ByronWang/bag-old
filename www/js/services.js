@@ -88,7 +88,7 @@ angular.module('starter.services', [])
 	    requireUser:function($scope,callback){	    
 	    	if(!islogin){
 	    		$scope.user={};
-	    		$ionicModal.fromTemplateUrl('templates/login.html', {
+	    		$ionicModal.fromTemplateUrl('templates/modal-login.html', {
 	    		    scope: $scope,
 	    		    animation: 'slide-in-up'
 	    		  }).then(function(modal) {
@@ -99,13 +99,8 @@ angular.module('starter.services', [])
 	    		  $scope.openModal = function() {
 	    		    $scope.modal.show();
 	    		  };
-	    		  $scope.login = function() {
-	    		    	user.username =$scope.user.username;
-	    		    	islogin = true;
-	  	    		    $scope.modal.hide();
-	  	    		    callback(user);
-	    		  };
-	    		  $scope.closeModal = function() {	    			  
+	    		  $scope.closeModal = function(user) {
+	    			  callback(user);
 	    		    $scope.modal.hide();
 	    		  };
 	    	}else{
@@ -173,7 +168,7 @@ angular.module('starter.services', [])
 
 		  // Some fake testing data
 		  var users = [
-        	    { id: 0, username: 'wangshilian',password:'1234567',nickname:"alian",avatarPath:""},
+        	    { id: 0, username: 'wangshilian',password:'1234567',nickname:"alian",avatarPath:"",role:'purchase'},
         	    { id: 1, username: 'jihua',password:'1234567',nickname:"alian",avatarPath:""},
         	    { id: 2, username: 'liubo',password:'1234567',nickname:"alian",avatarPath:""}
 		  ];
@@ -182,9 +177,15 @@ angular.module('starter.services', [])
 		    all: function() {
 		      return users;
 		    },
-		    get: function(orderId) {
+		    get: function(username) {
+		    	var user;
+		    	angular.forEach(users,function(u){
+		    		if(angular.equals(u.username,username)){
+		    			user =  u;
+		    		}
+		    	});
 		      // Simple index lookup
-		      return users[orderId];
+		      return user;
 		    }
 		  };
 		})

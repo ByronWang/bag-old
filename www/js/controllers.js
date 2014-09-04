@@ -49,7 +49,7 @@ angular.module('starter.controllers', [])
 	};
 	
 	$scope.editCart = function(){
-		  $ionicModal.fromTemplateUrl('templates/orders-cart.html', {
+		  $ionicModal.fromTemplateUrl('templates/modal-orders-cart.html', {
 		    scope: $scope,
 		    animation: 'slide-in-up'
 		  }).then(function(modal) {
@@ -61,13 +61,6 @@ angular.module('starter.controllers', [])
 		    $scope.modal.show();
 		  };
 		  
-		  $scope.login = function() {
-		    	user.username =$scope.user.username;
-		    	islogin = true;
-	    		    $scope.modal.hide();
-	    		    callback(user);
-		  };
-		  
 		  $scope.closeModal = function() {	    			  
 		    $scope.modal.hide();
 		  };	
@@ -75,11 +68,51 @@ angular.module('starter.controllers', [])
 	
 })
 
-.controller('DashCtrl', function($scope, $ionicSlideBoxDelegate) {
-
+.controller('DashCtrl', function($scope, $ionicModal) {
+	$scope.search = function(){
+		  $ionicModal.fromTemplateUrl('templates/modal-search.html', {
+		    scope: $scope,
+		    animation: 'slide-in-up'
+		  }).then(function(modal) {
+		    $scope.modal = modal;
+		    $scope.modal.show();
+		  });
+		
+		  $scope.openModal = function() {
+		    $scope.modal.show();
+		  };
+		  
+		  $scope.closeModal = function() {	    			  
+		    $scope.modal.hide();
+		  };	
+	};
+})
+.controller('SearchCtrl', function($scope,$state) {
+	$scope.ok = function(){
+		$scope.closeModal();
+		$state.go('tab.products');
+	};
+	
+	$scope.cancel = function(){
+		$scope.closeModal();
+	};
 })
 .controller('CartCtrl', function($scope, $ionicSlideBoxDelegate) {
 
+})
+.controller('LoginCtrl', function($scope, Users) {
+	$scope.user= {};
+	
+	// for test
+	$scope.user.username = "wangshilian";
+	
+	$scope.login = function() {
+		var user = Users.get($scope.user.username);
+		if(user){
+	    	islogin = true;
+	    	$scope.closeModal(user);
+		}
+	  };
 })
 
 .controller('InventorysCtrl', function($scope, Inventorys) {
