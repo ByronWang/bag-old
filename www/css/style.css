@@ -6,6 +6,11 @@ table tr th{
 	width: 4em;
 }
 
+a{
+	text-decoration: none;
+	color: black;
+}
+
 .button .badge {
   position: absolute;
   top: -3px; 
