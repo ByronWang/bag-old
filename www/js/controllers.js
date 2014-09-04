@@ -1,35 +1,84 @@
 angular.module('starter.controllers', [])
 
-.controller('GlobalCtrl', function($scope,LoginUser) {
+.controller('GlobalCtrl', function($scope,$ionicModal,LoginUser) {
 	$scope.user = LoginUser.get();
 	$scope.cart = {
 			cnt:0,
 			size:function(){
-				return this.Items.length;
+				var len =0;
+				angular.forEach($scope.cart.Countrys,function(o){
+					len = len + o.Items.length;
+				});
+				return len;
 			},
-			Items:[]};
+			Countrys:[]};
 	$scope.doCart = function(){
 		alert("from global");
 	};
 	$scope.addToCart = function(order){
 		var hasExist = false;
-		angular.forEach($scope.cart.Items,function(o){
-			if(o.id == order.id){
-				hasExist = true;
+
+		var country;
+
+		angular.forEach($scope.cart.Countrys,function(o){
+			if(o.name == order.country){
+				country = o;
 			}
 		});
-		if(hasExist){
-			order.amount = order.amount + 1;
+		
+		if(country){
+			angular.forEach(country.Items,function(o){
+				if(o.id == order.id){
+					hasExist = true;
+				}
+			});
+			if(hasExist){
+				order.amount = order.amount + 1;
+			}else{
+				order.amount = 1;
+				country.Items.push(order);	
+			}			
 		}else{
-			order.amount = 1;
-			$scope.cart.Items.push(order);
-			$scope.cart.cnt = $scope.cart.cnt  + 1;			
+			var country = {
+					name: order.country,
+					Items:[]
+			};			
+			country.Items.push(order);
+			$scope.cart.Countrys.push(country);
 		}
+	};
+	
+	$scope.editCart = function(){
+		  $ionicModal.fromTemplateUrl('templates/orders-cart.html', {
+		    scope: $scope,
+		    animation: 'slide-in-up'
+		  }).then(function(modal) {
+		    $scope.modal = modal;
+		    $scope.modal.show();
+		  });
+		
+		  $scope.openModal = function() {
+		    $scope.modal.show();
+		  };
+		  
+		  $scope.login = function() {
+		    	user.username =$scope.user.username;
+		    	islogin = true;
+	    		    $scope.modal.hide();
+	    		    callback(user);
+		  };
+		  
+		  $scope.closeModal = function() {	    			  
+		    $scope.modal.hide();
+		  };	
 	};
 	
 })
 
 .controller('DashCtrl', function($scope, $ionicSlideBoxDelegate) {
+
+})
+.controller('CartCtrl', function($scope, $ionicSlideBoxDelegate) {
 
 })
 

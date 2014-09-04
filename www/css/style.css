@@ -6,6 +6,8 @@ table tr th{
 	width: 4em;
 }
 
+.scroll-content{	
+}
 a{
 	text-decoration: none;
 	color: black;
@@ -141,4 +143,36 @@ img.main{
 	padding: 10px 0px;
 }
 
-  
+.item-checkbox-left{
+  padding-left: 40px;
+}
+  .item-checkbox-left  input {
+    position: absolute;
+    top: 10px;
+    left: 15px;
+    max-width: 20px;
+    max-height: 20px;
+    width: 20px; }
+
+.item-checkbox-thumbnail-left, .item-checkbox-thumbnail-left .item-content {
+  padding-left: 136px;
+  min-height: 100px; 
+}
+  .item-checkbox-thumbnail-left  .item-content  img:first-child{
+    position: absolute;
+    top: 10px;
+    left: 40px;
+    max-width: 80px;
+    max-height: 80px;
+    width: 100%; }
+    
+  .item-checkbox-thumbnail-left .item-content  input[type=checkbox] {
+    position: absolute;
+    top: 40px;
+    left: 15px;
+    max-width: 20px;
+    max-height: 20px;
+    width: 20px; }
+
+.item-avatar.item-complex, .item-avatar-left.item-complex, .item-checkbox-thumbnail-left.item-complex {
+  padding-left: 0; }
