@@ -95,7 +95,8 @@ angular.module('starter.controllers', [])
 })
 
 .controller('InventoryDetailCtrl', function($scope, $stateParams, Inventorys) {
-  $scope.inventory = Inventorys.get($stateParams.inventoryId);  
+  $scope.inventory = Inventorys.get($stateParams.inventoryId);    
+  $scope.item = Inventorys.getItem($stateParams.inventoryId,$stateParams.itemId);
   $scope.slideHasChanged=function($index){
 	  
   };

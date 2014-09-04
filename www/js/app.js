@@ -78,7 +78,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
       }
     })
     .state('tab.inventory-detail', {
-      url: '/inventory/:inventoryId',
+      url: '/inventory/:inventoryId/:itemId',
       views: {
         'tab-inventorys': {
           templateUrl: 'templates/inventory-detail.html',
