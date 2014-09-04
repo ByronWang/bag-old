@@ -2,9 +2,7 @@
   <ion-content class="has-subheader">
     <div class="list padding-top" x-ng-repeat="order in orders" >
     
-	   <div class="item item-divider">
-	    Candy Bars
-	  </div>
+	   <div class="item item-divider">{{order.country}} </div>
 		      <a x-ng-repeat="item in order.Items"  class="item item-thumbnail-left"  href="#/tab/order/c/{{order.id}}/{{item.id}}">
 		      <img src="img/u10.png">
 		      <pre>{{item.name}}      （ {{item.country}} ）

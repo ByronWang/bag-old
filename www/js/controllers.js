@@ -94,11 +94,28 @@ angular.module('starter.controllers', [])
   };
 })
 
-.controller('InventoryDetailCtrl', function($scope, $stateParams, Inventorys) {
-  $scope.inventory = Inventorys.get($stateParams.inventoryId);    
-  $scope.item = Inventorys.getItem($stateParams.inventoryId,$stateParams.itemId);
+.controller('InventoryDetailCtrl', function($scope, $stateParams,$timeout,$ionicSlideBoxDelegate, Inventorys) {
+  $scope.inventory = Inventorys.get($stateParams.inventoryId);
+  $scope.activeItem  = $scope.inventory.Items[$stateParams.itemId];
+  
+  $scope.slideSize = function(){
+	  return $scope.inventory.Items.length;
+  };
+  
+  $scope.slideActiveSlide = function(){
+	  var delegateInstance  = $ionicSlideBoxDelegate.$getByHandle('inventory');
+	  if(delegateInstance){
+		  return delegateInstance.currentIndex() + 1;
+	  }else{
+		  return 0;
+	  }
+  };  
+  $timeout( function() {
+      $scope.$broadcast('slideBox.setSlide', $stateParams.itemId);
+  }, 300);
+  
   $scope.slideHasChanged=function($index){
-	  
+	  $scope.activeItem = $scope.inventory.Items[$index];
   };
 })
 
@@ -126,26 +143,22 @@ angular.module('starter.controllers', [])
 
 .controller('OrderDetailCtrl', function($scope, $stateParams,$ionicSlideBoxDelegate,$timeout, Orders) {
   $scope.order = Orders.get($stateParams.orderId);
-  $scope.item = Orders.getItem($stateParams.orderId,$stateParams.itemId);
-  $scope.$curStatus = $scope.item.statusid;
+  $scope.activeItem  = $scope.order.Items[$stateParams.itemId];
   
-  $scope.initSlide = function(){
-	  if($scope.item.statusid>2){
-		  return $scope.item.statusid-2;
+  
+  $scope.fromStatusToIndex = function(status){
+	  if(status>2){
+		  return status-2;
 	  }else{
-		  return $scope.item.statusid-1;
+		  return status-1;
 	  }
   };
-  $scope.$watch($scope.item.statusid,function(){
-	  if($scope.item.statusid){
-		  $timeout( function() {
-		      $scope.$broadcast('slideBox.setSlide', $scope.initSlide());
-		  }, 300);
-	  };
-  });
-
   
-  $scope.slide = function(e,to){
+  $scope.$watch('statusActiveSlide',function(){
+	  
+  });
+  
+  $scope.statusSlide = function(e,to){
 	  $ionicSlideBoxDelegate.$getByHandle("orderStatus").slide(to);
 	  var ele = angular.element(e);
 	  angular.forEach(ele.parent().parent().find("div"),function(i){
@@ -154,12 +167,60 @@ angular.module('starter.controllers', [])
 	  });
 	  ele.addClass("active");
   };
-
-  $scope.onSwipeLeft = function(){
-	  $scope.order.name = "Left";
+  
+  /*
+  $scope.$curStatus = $scope.item.statusId;
+  
+  $scope.initSlide = function(){
+	  if($scope.item.statusId>2){
+		  return $scope.item.statusId-2;
+	  }else{
+		  return $scope.item.statusId-1;
+	  }
   };
-  $scope.onSwipeRight = function(){
-	  $scope.order.name = "Right";	  
+  $scope.$watch($scope.item.statusId,function(){
+	  if($scope.item.statusId){
+		  $timeout( function() {
+		      $scope.$broadcast('slideBox.setSlide', $scope.initSlide());
+		  }, 300);
+	  };
+  });
+  
+
+*/
+  
+
+  $scope.slideSize = function(){
+	  return $scope.order.Items.length;
+  };
+  
+  $scope.slideActiveSlide = function(){
+	  var delegateInstance  = $ionicSlideBoxDelegate.$getByHandle('order');
+	  if(delegateInstance){
+		  return delegateInstance.currentIndex() + 1;
+	  }else{
+		  return 0;
+	  }
+  };  
+  $timeout( function() {
+      $scope.$broadcast('slideBox.setSlide', $stateParams.itemId);
+  }, 300);
+  
+  $scope.slideHasChanged=function($index){
+	  $scope.activeItem = $scope.order.Items[$index];
+	  $scope.statusActiveSlide = $scope.fromStatusToIndex($scope.activeItem.statusId);
+  };
+})
+
+.controller('ProductsCtrl', function($scope, Products) {
+  $scope.products = Products.all();
+})
+
+.controller('ProductDetailCtrl', function($scope, $stateParams, Products) {
+  $scope.product = Products.get($stateParams.productId);
+  $scope.selectThis = function(){
+	  $scope.addToCart($scope.product);
+	  return false;
   };
 })
 
