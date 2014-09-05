@@ -4,44 +4,18 @@
   The InventorysCtrl pulls data from the Inventorys service (service.js)
   The Inventorys service returns an array of inventory data
 -->
-<ion-view title="{{inventory.name}}">
+<ion-view title="({{slideActiveSlide()}} / {{slideSize()}}) - {{activeItem.name}}">
   <ion-content has-header="true" padding="true">
-  	<div>
-	  	<div>
-	  		<img src="img/u10.png" class="float-left"/>
-		  	<div>
-		  	<table>
-		  	<tbody>
-		  		<tr>
-		  			<th>购买地</th>
-		  			<td>{{inventory.orderFrom}}</td>
-		  		</tr>
-		  		<tr>
-		  			<th>类型</th>
-		  			<td>{{inventory.type}}</td>
-		  		</tr>
-		  		<tr>
-		  			<th>总金额</th>
-		  			<td>{{inventory.amount}}</td>
-		  		</tr>
-		  		<tr>
-		  			<th>竟单期限</th>
-		  			<td>{{inventory.deadline}}</td>
-		  		</tr>
-		  		</tbody>
-		  		<tfoot><tr><th rowspan="2">已有{{inventory.cntBuyer}}10位买手参与此次购买</th></tr></tfoot>
-		  	</table>
-		  	
-			</div>
-  		</div>
-		<div>
-			  	<pre>  
-所购商品超出指定价格：按实际价格购买
-邮寄方式： 买家转运
-所购商品缺货：购买其他物品
-			</pre>
-		</div>
+  
+  <ion-slide-box delegate-handle="inventory" on-slide-changed="slideHasChanged($index)" show-pager=false>
+  <ion-slide ng-repeat="item in inventory.Items">
+  
+  <h2>{{curSlide}}</h2>
+  <div class="list">
+	   <ng-include src="'templates/order-basic.html'"></ng-include>
+	   <h3>已有{{item.cntBuyer}}位买手参与此次购买</h3>
   	</div>
-  	
+  	</ion-slide>
+  	</ion-slide-box>
   </ion-content>
 </ion-view>

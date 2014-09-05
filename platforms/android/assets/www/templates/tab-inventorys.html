@@ -17,7 +17,7 @@
 	    	{{inventory.country}} &nbsp;	    	{{inventory.date}}
 	  </div>
   
-      <a ng-repeat="item in inventory.Items"  class="item"  href="#/tab/inventory/{{inventory.id}}">
+      <a ng-repeat="item in inventory.Items"  class="item"  href="#/tab/inventory/{{inventory.id}}/{{$index}}">
 			<div>
 				<table>
 					<tbody>
