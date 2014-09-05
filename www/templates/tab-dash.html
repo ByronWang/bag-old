@@ -19,10 +19,9 @@ div.box{
       <a class="button button-icon icon ion-plus" x-ng-click="editCart()">
      </a>
   </ion-nav-buttons>
-  <ion-content class="has-header ">
+  <ion-content class="has-header" on-scroll="onScroll();" on-scroll-complete="onScrollComplete();">
   
-  <!-- 
-  <ion-slide-box does-continue=true auto-play=true slide-interval=2000>
+  <ion-slide-box delegate-handle="band" does-continue=true auto-play=true slide-interval=2000>
     <ion-slide>
     <a  href="#/tab/product/1">
       <div id="s1" class="box blue">
@@ -35,9 +34,8 @@ div.box{
         <img alt="2222" src="img/A002.jpg">
       </div></a>
     </ion-slide>
-  </ion-slide-box> -->
-  
-  
+  </ion-slide-box>
+    
   <div class="list layout">
       <div class="item thumbnails_lists clear">
              <a href="#/tab/products">

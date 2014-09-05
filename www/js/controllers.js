@@ -68,7 +68,7 @@ angular.module('starter.controllers', [])
 	
 })
 
-.controller('DashCtrl', function($scope, $ionicModal) {
+.controller('DashCtrl', function($scope, $ionicSlideBoxDelegate,$ionicModal) {
 	$scope.search = function(){
 		  $ionicModal.fromTemplateUrl('templates/modal-search.html', {
 		    scope: $scope,
@@ -86,6 +86,13 @@ angular.module('starter.controllers', [])
 		    $scope.modal.hide();
 		  };	
 	};
+
+	$scope.onScroll = function(){
+		$ionicSlideBoxDelegate.$getByHandle('band').stop();
+	}
+	$scope.onScrollComplete = function(){
+		$ionicSlideBoxDelegate.$getByHandle('band').start();
+	}
 })
 .controller('SearchCtrl', function($scope,$state) {
 	$scope.ok = function(){
