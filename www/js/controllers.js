@@ -309,6 +309,15 @@ angular.module('starter.controllers', [])
 	  };
 })
 
+
+.controller('LoadingCtrl', function($http, $ionicLoading) {/*test*/
+  var _this = this
+
+  $http.jsonp('http://api.openbeerdatabase.com/v1/breweries.json?callback=JSON_CALLBACK').then(function(result) {
+    _this.breweries = result.data.breweries
+  })
+})
+
 .controller('AccountCtrl', function($scope,LoginUser) {
 	LoginUser.requireUser($scope,function(user){
 		$scope.currentUser = user;
