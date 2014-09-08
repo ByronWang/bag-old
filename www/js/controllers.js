@@ -309,25 +309,6 @@ angular.module('starter.controllers', [])
 	  };
 })
 
-.controller('MainCtrl', function($scope, Camera) {
-
-  $scope.getPhoto = function() {
-    Camera.getPicture().then(function(imageURI) {
-      console.log(imageURI);
-      $scope.lastPhoto = imageURI;
-    }, function(err) {
-      console.err(err);
-    }, {
-      sourceType : Camera.PictureSourceType.PHOTOLIBRARY,
-      quality: 50,
-      allowEdit : true,
-      targetWidth: 320,
-      targetHeight: 320,
-      saveToPhotoAlbum: false
-    });
-  };
-})
-
 .controller('LoadingCtrl', function($http, $ionicLoading) {/*test*/
   var _this = this
 
@@ -422,9 +403,6 @@ angular.module('starter.controllers', [])
 	     }
 	   });
 	   
-	   
-	   
-
 	   // For example's sake, hide the sheet after two seconds
 	   $timeout(function() {
 	     hideSheet();
