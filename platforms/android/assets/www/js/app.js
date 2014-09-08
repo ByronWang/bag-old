@@ -38,13 +38,13 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
 })
 
 .run(function($rootScope, $ionicLoading) {
-  $rootScope.$on('loading:show', function() {
-    $ionicLoading.show({template: 'foo'});
+/*  $rootScope.$on('loading:show', function() {
+    $ionicLoading.show({template: 'Loading...'});
   });
 
   $rootScope.$on('loading:hide', function() {
     $ionicLoading.hide();
-  });
+  });*/
 })
 
 /* Photo */
@@ -229,7 +229,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
         views: {
           'tab-account': {
             templateUrl: 'templates/account-setting.html',
-            controller: 'AccountCtrl'
+            controller: 'AccountSettingCtrl'
           }
         }
       })

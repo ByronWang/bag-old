@@ -177,7 +177,17 @@ angular.module('starter.services', [])
       }, options);
       
       return q.promise;
-    }
+    },
+    DestinationType : {
+  		    DATA_URL : 0,      // Return image as base64-encoded string
+  		    FILE_URI : 1,      // Return image file URI
+  		    NATIVE_URI : 2     // Return image native URI (e.g., assets-library:// on iOS or content:// on Android)
+    },
+    PictureSourceType : {
+  		    PHOTOLIBRARY : 0,
+  		    CAMERA : 1,
+  		    SAVEDPHOTOALBUM : 2
+  	}
   }
 }])
 

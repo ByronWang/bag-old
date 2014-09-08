@@ -318,7 +318,9 @@ angular.module('starter.controllers', [])
     }, function(err) {
       console.err(err);
     }, {
-      quality: 75,
+      sourceType : Camera.PictureSourceType.PHOTOLIBRARY,
+      quality: 50,
+      allowEdit : true,
       targetWidth: 320,
       targetHeight: 320,
       saveToPhotoAlbum: false
@@ -335,10 +337,105 @@ angular.module('starter.controllers', [])
 })
 
 .controller('AccountCtrl', function($scope,LoginUser) {
-	LoginUser.requireUser($scope,function(user){
-		$scope.currentUser = user;
-	});
-});
+	setTimeout(function() {
+		LoginUser.requireUser($scope,function(user){
+			$scope.currentUser = user;
+		});
+	}, 0);
+})
+.controller('AccountSettingCtrl', function($scope,$ionicActionSheet,Camera,$timeout,LoginUser) {
+	$scope.user = $scope.currentUser; 
+	$scope.lastPhoto ="img/mcfly.jpg";
+
+	$scope.getPhotoFromCamera = function() {
+	    Camera.getPicture( {
+		      sourceType : Camera.PictureSourceType.CAMERA,
+		      correctOrientation: true,
+		      quality: 50,
+		      targetWidth: 320,
+		      targetHeight: 320,
+		      saveToPhotoAlbum: false
+		    }).then(function(imageURI) {
+	      console.log(imageURI);
+	      $scope.lastPhoto = imageURI;
+	    }, function(err) {
+	      console.err(err);
+	    });
+	  };
+  
+	$scope.getPhotoFromLibrary = function() {
+	    Camera.getPicture({
+		      sourceType : Camera.PictureSourceType.PHOTOLIBRARY,
+		      correctOrientation: true,
+		      quality: 50,
+		      targetWidth: 320,
+		      targetHeight: 320,
+		      saveToPhotoAlbum: false
+		    }).then(function(imageURI) {
+	      console.log(imageURI);
+	      $scope.lastPhoto = imageURI;
+	    }, function(err) {
+	      console.err(err);
+	    });
+	  };
+	  
+
+		$scope.getPhotoFromAlbum = function() {
+		    Camera.getPicture({
+			      sourceType : Camera.PictureSourceType.SAVEDPHOTOALBUM,
+			      correctOrientation: true,
+			      quality: 50,
+			      targetWidth: 320,
+			      targetHeight: 320,
+			      saveToPhotoAlbum: false
+			    }).then(function(imageURI) {
+		      console.log(imageURI);
+		      $scope.lastPhoto = imageURI;
+		    }, function(err) {
+		      console.err(err);
+		    });
+		  };
+		  
+
+	
+	 // Triggered on a button click, or some other target
+	 $scope.editAvatar= function() {
+
+	   // Show the action sheet
+	   var hideSheet = $ionicActionSheet.show({
+	     buttons: [
+	       { text: '拍照' },
+	       { text: '从手机相册选择' },
+	       { text: '从手机相册选择' }
+	     ],
+	     titleText: '更改头像',
+	     cancelText: '取消',
+	     cancel: function() {
+	          // add cancel code..
+	        },
+	     buttonClicked: function(index) {
+	    	if(index==0){
+	    		 $scope.getPhotoFromCamera();	  
+	    	 }else if(index==1){
+	    		 $scope.getPhotoFromLibrary();	   	
+	    	 }else if(index==2){
+	    		 $scope.getPhotoFromAlbum();	    		 
+	    	 }
+	       return true;
+	     }
+	   });
+	   
+	   
+	   
+
+	   // For example's sake, hide the sheet after two seconds
+	   $timeout(function() {
+	     hideSheet();
+	   }, 2000);
+
+	 };
+})
+;
 
 
 
