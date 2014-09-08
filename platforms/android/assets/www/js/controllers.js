@@ -405,7 +405,6 @@ angular.module('starter.controllers', [])
 	   var hideSheet = $ionicActionSheet.show({
 	     buttons: [
 	       { text: '拍照' },
-	       { text: '从手机相册选择' },
 	       { text: '从手机相册选择' }
 	     ],
 	     titleText: '更改头像',
@@ -417,9 +416,7 @@ angular.module('starter.controllers', [])
 	    	if(index==0){
 	    		 $scope.getPhotoFromCamera();	  
 	    	 }else if(index==1){
-	    		 $scope.getPhotoFromLibrary();	   	
-	    	 }else if(index==2){
-	    		 $scope.getPhotoFromAlbum();	    		 
+	    		 $scope.getPhotoFromLibrary();    		 
 	    	 }
 	       return true;
 	     }

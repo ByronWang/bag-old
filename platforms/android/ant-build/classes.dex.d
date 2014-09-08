@@ -13,4 +13,5 @@ D:\Projects\bag\platforms\android\ant-build\classes\org\apache\cordova\camera\Ca
 D:\Projects\bag\platforms\android\ant-build\classes\org\apache\cordova\camera\ExifHelper.class \
 D:\Projects\bag\platforms\android\ant-build\classes\org\apache\cordova\camera\FileHelper.class \
 D:\Projects\bag\platforms\android\ant-build\classes\org\apache\cordova\device\Device.class \
+D:\Projects\bag\platforms\android\ant-build\classes\org\apache\cordova\splashscreen\SplashScreen.class \
 D:\Projects\bag\platforms\android\ant-build\dexedLibs\classes-d83a81ede82351d56d2daf8a0936ac53.jar \
