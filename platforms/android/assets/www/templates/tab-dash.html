@@ -15,12 +15,20 @@ div.box{
 	</ion-nav-buttons>
 	<ion-nav-buttons side="right">    
       <button class="button button-icon icon ion-search" x-ng-click="search()">
-     </button>
+     </button> 
+      <a class="button button-icon icon ion-plus" x-ng-click="editCart()">
+     </a>
   </ion-nav-buttons>
-  <ion-content class="has-header ">
+  <ion-content class="has-header" on-scroll="onScroll();" on-scroll-complete="onScrollComplete();">
   
   
-  <ion-slide-box does-continue=true auto-play=true slide-interval=2000>
+  <div  ng-controller="MainCtrl">
+      <button ng-click="getPhoto()" class="button button-block button-primary">Take Photo</button>
+      <img ng-src="{{lastPhoto}}" style="max-width: 100%">
+   </div>
+      
+      
+  <ion-slide-box delegate-handle="band" does-continue=true auto-play=true slide-interval=2000>
     <ion-slide>
     <a  href="#/tab/product/1">
       <div id="s1" class="box blue">
@@ -34,8 +42,7 @@ div.box{
       </div></a>
     </ion-slide>
   </ion-slide-box>
-  
-  
+    
   <div class="list layout">
       <div class="item thumbnails_lists clear">
              <a href="#/tab/products">

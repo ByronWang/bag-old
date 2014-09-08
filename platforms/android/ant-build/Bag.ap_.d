@@ -142,9 +142,15 @@ D:\Projects\bag\platforms\android\assets\www\lib\ionic\scss\ionicons\_ionicons-f
 D:\Projects\bag\platforms\android\assets\www\lib\ionic\scss\ionicons\_ionicons-icons.scss \
 D:\Projects\bag\platforms\android\assets\www\lib\ionic\scss\ionicons\_ionicons-variables.scss \
 D:\Projects\bag\platforms\android\assets\www\plugins\com.ionic.keyboard \
+D:\Projects\bag\platforms\android\assets\www\plugins\org.apache.cordova.camera \
 D:\Projects\bag\platforms\android\assets\www\plugins\org.apache.cordova.device \
 D:\Projects\bag\platforms\android\assets\www\plugins\com.ionic.keyboard\www \
 D:\Projects\bag\platforms\android\assets\www\plugins\com.ionic.keyboard\www\keyboard.js \
+D:\Projects\bag\platforms\android\assets\www\plugins\org.apache.cordova.camera\www \
+D:\Projects\bag\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\Camera.js \
+D:\Projects\bag\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\CameraConstants.js \
+D:\Projects\bag\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\CameraPopoverHandle.js \
+D:\Projects\bag\platforms\android\assets\www\plugins\org.apache.cordova.camera\www\CameraPopoverOptions.js \
 D:\Projects\bag\platforms\android\assets\www\plugins\org.apache.cordova.device\www \
 D:\Projects\bag\platforms\android\assets\www\plugins\org.apache.cordova.device\www\device.js \
 D:\Projects\bag\platforms\android\assets\www\templates\account-about.html \
@@ -156,6 +162,7 @@ D:\Projects\bag\platforms\android\assets\www\templates\account-myorders.html \
 D:\Projects\bag\platforms\android\assets\www\templates\account-setting.html \
 D:\Projects\bag\platforms\android\assets\www\templates\Copy of order-detail.html \
 D:\Projects\bag\platforms\android\assets\www\templates\inventory-detail.html \
+D:\Projects\bag\platforms\android\assets\www\templates\modal-filter.html \
 D:\Projects\bag\platforms\android\assets\www\templates\modal-login.html \
 D:\Projects\bag\platforms\android\assets\www\templates\modal-orders-cart.html \
 D:\Projects\bag\platforms\android\assets\www\templates\modal-search.html \

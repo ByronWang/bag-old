@@ -21,6 +21,7 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
   });
 })
 
+/* global loading dialog  */
 .config(function($httpProvider) {
   $httpProvider.interceptors.push(function($rootScope) {
     return {
@@ -45,6 +46,23 @@ angular.module('starter', ['ionic', 'starter.controllers', 'starter.services', '
     $ionicLoading.hide();
   });
 })
+
+/* Photo */
+
+.config(function($compileProvider){
+  $compileProvider.imgSrcSanitizationWhitelist(/^\s*(https?|ftp|mailto|file|tel):/);
+})
+
+.run(function($ionicPlatform) {
+  $ionicPlatform.ready(function() {
+    if(window.StatusBar) {
+      // org.apache.cordova.statusbar required
+      StatusBar.styleDefault();
+    }
+  });
+})
+
+
 
 
 .config(function($stateProvider, $urlRouterProvider) {

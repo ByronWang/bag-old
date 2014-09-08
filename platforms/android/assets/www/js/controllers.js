@@ -68,7 +68,7 @@ angular.module('starter.controllers', [])
 	
 })
 
-.controller('DashCtrl', function($scope, $ionicModal) {
+.controller('DashCtrl', function($scope, $ionicSlideBoxDelegate,$ionicModal) {
 	$scope.search = function(){
 		  $ionicModal.fromTemplateUrl('templates/modal-search.html', {
 		    scope: $scope,
@@ -86,11 +86,28 @@ angular.module('starter.controllers', [])
 		    $scope.modal.hide();
 		  };	
 	};
+
+	$scope.onScroll = function(){
+		$ionicSlideBoxDelegate.$getByHandle('band').stop();
+	}
+	$scope.onScrollComplete = function(){
+		$ionicSlideBoxDelegate.$getByHandle('band').start();
+	}
 })
 .controller('SearchCtrl', function($scope,$state) {
 	$scope.ok = function(){
 		$scope.closeModal();
 		$state.go('tab.products');
+	};
+	
+	$scope.cancel = function(){
+		$scope.closeModal();
+	};
+})
+.controller('FilterCtrl', function($scope,$state) {
+	$scope.ok = function(country){
+		$scope.country = country;
+		$scope.closeModal();
 	};
 	
 	$scope.cancel = function(){
@@ -115,8 +132,26 @@ angular.module('starter.controllers', [])
 	  };
 })
 
-.controller('InventorysCtrl', function($scope, Inventorys) {
+.controller('InventorysCtrl', function($scope,$ionicModal, Inventorys) {
+	$scope.country = "美国";
   $scope.inventorys = Inventorys.all();
+	$scope.filter = function(){
+		  $ionicModal.fromTemplateUrl('templates/modal-filter.html', {
+		    scope: $scope,
+		    animation: 'slide-in-up'
+		  }).then(function(modal) {
+		    $scope.modal = modal;
+		    $scope.modal.show();
+		  });
+		
+		  $scope.openModal = function() {
+		    $scope.modal.show();
+		  };
+		  
+		  $scope.closeModal = function() {	    			  
+		    $scope.modal.hide();
+		  };	
+	};
 })
 
 .controller('tabsMenuCtrl', function($scope) {
@@ -272,6 +307,31 @@ angular.module('starter.controllers', [])
 	     }
 	     $scope.$broadcast('scroll.infiniteScrollComplete');
 	  };
+})
+
+.controller('MainCtrl', function($scope, Camera) {
+
+  $scope.getPhoto = function() {
+    Camera.getPicture().then(function(imageURI) {
+      console.log(imageURI);
+      $scope.lastPhoto = imageURI;
+    }, function(err) {
+      console.err(err);
+    }, {
+      quality: 75,
+      targetWidth: 320,
+      targetHeight: 320,
+      saveToPhotoAlbum: false
+    });
+  };
+})
+
+.controller('LoadingCtrl', function($http, $ionicLoading) {/*test*/
+  var _this = this
+
+  $http.jsonp('http://api.openbeerdatabase.com/v1/breweries.json?callback=JSON_CALLBACK').then(function(result) {
+    _this.breweries = result.data.breweries
+  })
 })
 
 .controller('AccountCtrl', function($scope,LoginUser) {
