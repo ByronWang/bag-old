@@ -1,69 +1,10 @@
 angular.module('starter.controllers', [])
 
-.controller('GlobalCtrl', function($scope,$ionicModal,LoginUser) {
+.controller('GlobalCtrl', function($scope,$ionicModal,LoginUser,Cart) {
 	$scope.user = LoginUser.get();
-	$scope.cart = {
-			cnt:0,
-			size:function(){
-				var len =0;
-				angular.forEach($scope.cart.Countrys,function(o){
-					len = len + o.Items.length;
-				});
-				return len;
-			},
-			Countrys:[]};
-	$scope.doCart = function(){
-		alert("from global");
-	};
-	$scope.addToCart = function(order){
-		var hasExist = false;
-
-		var country;
-
-		angular.forEach($scope.cart.Countrys,function(o){
-			if(o.name == order.country){
-				country = o;
-			}
-		});
-		
-		if(country){
-			angular.forEach(country.Items,function(o){
-				if(o.id == order.id){
-					hasExist = true;
-				}
-			});
-			if(hasExist){
-				order.amount = order.amount + 1;
-			}else{
-				order.amount = 1;
-				country.Items.push(order);	
-			}			
-		}else{
-			var country = {
-					name: order.country,
-					Items:[]
-			};			
-			country.Items.push(order);
-			$scope.cart.Countrys.push(country);
-		}
-	};
-	
+	$scope.cart = Cart;
 	$scope.editCart = function(){
-		  $ionicModal.fromTemplateUrl('templates/modal-orders-cart.html', {
-		    scope: $scope,
-		    animation: 'slide-in-up'
-		  }).then(function(modal) {
-		    $scope.modal = modal;
-		    $scope.modal.show();
-		  });
-		
-		  $scope.openModal = function() {
-		    $scope.modal.show();
-		  };
-		  
-		  $scope.closeModal = function() {	    			  
-		    $scope.modal.hide();
-		  };	
+		$scope.cart.edit($scope);
 	};
 	
 })
@@ -186,20 +127,6 @@ angular.module('starter.controllers', [])
 	  $scope.activeItem = $scope.inventory.Items[$index];
   };
 })
-
-.controller('ProductsCtrl', function($scope, Products) {
-  $scope.products = Products.all();
-})
-
-.controller('ProductDetailCtrl', function($scope, $stateParams, Products) {
-  $scope.product = Products.get($stateParams.productId);
-  $scope.selectThis = function(){
-	  $scope.addToCart($scope.product);
-	  return false;
-  };
-})
-
-
 .controller('OrdersCtrl', function($scope, Orders) {
   $scope.orders = Orders.all();
   
@@ -287,10 +214,11 @@ angular.module('starter.controllers', [])
 .controller('ProductDetailCtrl', function($scope, $stateParams, Products) {
   $scope.product = Products.get($stateParams.productId);
   $scope.selectThis = function(){
-	  $scope.addToCart($scope.product);
+	  $scope.cart.add($scope.product);
 	  return false;
   };
 })
+
 
 .controller('TestCtrl', function($scope, $http) {
 	  $scope.items = [];

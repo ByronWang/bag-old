@@ -217,4 +217,70 @@ angular.module('starter.services', [])
 		    }
 		  };
 		})
+				
+	.factory('Cart', function($ionicModal) {
+		return {
+				cnt:0,
+				Countrys:[],
+				
+				size:function(){
+					var len =0;
+					angular.forEach(this.Countrys,function(o){
+						len = len + o.Items.length;
+					});
+					return len;
+				},
+				
+				add : function(order){
+					var hasExist = false;
+
+					var country;
+
+					angular.forEach(this.Countrys,function(o){
+						if(o.name == order.country){
+							country = o;
+						}
+					});
+					
+					if(country){
+						angular.forEach(country.Items,function(o){
+							if(o.id == order.id){
+								hasExist = true;
+							}
+						});
+						if(hasExist){
+							order.amount = order.amount + 1;
+						}else{
+							order.amount = 1;
+							country.Items.push(order);	
+						}			
+					}else{
+						var country = {
+								name: order.country,
+								Items:[]
+						};			
+						country.Items.push(order);
+						this.Countrys.push(country);
+					}
+				},
+				edit : function($scope){
+					  $ionicModal.fromTemplateUrl('templates/modal-orders-cart.html', {
+					    scope: $scope,
+					    animation: 'slide-in-up'
+					  }).then(function(modal) {
+					    $scope.modal = modal;
+					    $scope.modal.show();
+					  });
+					
+					  $scope.openModal = function() {
+					    $scope.modal.show();
+					  };
+					  
+					  $scope.closeModal = function() {	    			  
+					    $scope.modal.hide();
+					  };	
+				}
+		};
+		
+		})
 		;
